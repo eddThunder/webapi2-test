@@ -79,26 +79,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
-    <Compile Include="DataModel\DataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\DataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="DataModel\Roles.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>UsersManagementDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Users.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>UsersManagementDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\UsersManagementDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersManagementDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\UsersManagementDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersManagementDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\UsersManagementDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersManagementDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IUsersData.cs" />
     <Compile Include="Repositories\Interfaces\IUserRepository.cs" />
@@ -109,30 +109,28 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <EntityDeploy Include="DataModel\DataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="DataModel\DataModel.edmx.diagram">
-      <DependentUpon>DataModel.edmx</DependentUpon>
+    <EntityDeploy Include="DataModel\UsersManagementDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UsersManagementDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModel\UsersManagementDataModel.edmx.diagram">
+      <DependentUpon>UsersManagementDataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="DataModel\DataModel.Context.tt">
+    <Content Include="DataModel\UsersManagementDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
-      <DependentUpon>DataModel.edmx</DependentUpon>
+      <DependentUpon>UsersManagementDataModel.edmx</DependentUpon>
+      <LastGenOutput>UsersManagementDataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataModel\DataModel.tt">
+    <Content Include="DataModel\UsersManagementDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.cs</LastGenOutput>
+      <DependentUpon>UsersManagementDataModel.edmx</DependentUpon>
+      <LastGenOutput>UsersManagementDataModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,10 +13,10 @@ namespace DataAccessLayer.DataModel
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersManagementEntities : DbContext
+    public partial class UsersManagementEntities1 : DbContext
     {
-        public UsersManagementEntities()
-            : base("name=UsersManagementEntities")
+        public UsersManagementEntities1()
+            : base("name=UsersManagementEntities1")
         {
         }
     

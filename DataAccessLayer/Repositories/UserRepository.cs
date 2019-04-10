@@ -11,14 +11,14 @@ namespace DataAccessLayer.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly DataModel.UsersManagementEntities _context;
+        private readonly UsersManagementEntities1 _context;
 
         public UserRepository()
         {
-            _context = new UsersManagementEntities();
+            _context = new UsersManagementEntities1();
         }
 
-        public UserRepository(UsersManagementEntities context)
+        public UserRepository(UsersManagementEntities1 context)
         {
             _context = context;
         }

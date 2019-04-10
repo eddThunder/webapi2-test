@@ -95,7 +95,7 @@
           <End Role="Roles" Type="Self.Roles" Multiplicity="*" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="UsersManagementEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="UsersManagementEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Roles" EntityType="Self.Roles" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <AssociationSet Name="UsersRoles" Association="Self.UsersRoles">
@@ -108,7 +108,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="UsersManagementModelStoreContainer" CdmEntityContainer="UsersManagementEntities">
+        <EntityContainerMapping StorageEntityContainer="UsersManagementModelStoreContainer" CdmEntityContainer="UsersManagementEntities1">
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="UsersManagementModel.Roles">
               <MappingFragment StoreEntitySet="Roles">
