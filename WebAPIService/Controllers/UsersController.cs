@@ -1,11 +1,14 @@
-﻿using BusinessLayer.Interfaces;
-using DataAccessLayer.DataModel;
-using System;
-using System.Threading.Tasks;
-using System.Web.Http;
+﻿
 
 namespace WebAPIService.Controllers
 {
+    using BusinessLayer.Dto;
+    using BusinessLayer.Interfaces;
+    using DataAccessLayer.DataModel;
+    using System;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {
@@ -50,7 +53,7 @@ namespace WebAPIService.Controllers
 
         [HttpPut]
         [Route("add")]
-        public void InsertUser(Users user)
+        public void InsertUser(UserDto user)
         {
             try
             {
@@ -65,7 +68,7 @@ namespace WebAPIService.Controllers
 
         [HttpPut]
         [Route("update")]
-        public void UpdateUser(Users user)
+        public void UpdateUser(UserDto user)
         {
             try
             {

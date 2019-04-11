@@ -13,10 +13,10 @@ namespace DataAccessLayer.DataModel
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersManagementEntities1 : DbContext
+    public partial class UsersManagementEntities : DbContext
     {
-        public UsersManagementEntities1()
-            : base("name=UsersManagementEntities1")
+        public UsersManagementEntities()
+            : base("name=UsersManagementEntities")
         {
         }
     
@@ -27,5 +27,6 @@ namespace DataAccessLayer.DataModel
     
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<UsersRoles> UsersRoles { get; set; }
     }
 }

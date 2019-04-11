@@ -25,6 +25,7 @@
             <PropertyRef Name="UserId" />
             <PropertyRef Name="RoleId" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
@@ -80,7 +81,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Users" Relationship="Self.UsersRoles" FromRole="Roles" ToRole="Users" />
+          <NavigationProperty Name="UsersRoles" Relationship="Self.FK__UsersRole__RoleI__286302EC" FromRole="Roles" ToRole="UsersRoles" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -89,18 +90,58 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="UserPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Roles" Relationship="Self.UsersRoles" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="UsersRoles" Relationship="Self.FK__UsersRole__UserI__276EDEB3" FromRole="Users" ToRole="UsersRoles" />
         </EntityType>
-        <Association Name="UsersRoles">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="*" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+        <EntityType Name="UsersRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK__UsersRole__RoleI__286302EC" FromRole="UsersRoles" ToRole="Roles" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__UsersRole__UserI__276EDEB3" FromRole="UsersRoles" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK__UsersRole__RoleI__286302EC">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersRoles" Type="Self.UsersRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="UsersManagementEntities1" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK__UsersRole__UserI__276EDEB3">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersRoles" Type="Self.UsersRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UsersManagementEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Roles" EntityType="Self.Roles" />
           <EntitySet Name="Users" EntityType="Self.Users" />
-          <AssociationSet Name="UsersRoles" Association="Self.UsersRoles">
+          <EntitySet Name="UsersRoles" EntityType="Self.UsersRoles" />
+          <AssociationSet Name="FK__UsersRole__RoleI__286302EC" Association="Self.FK__UsersRole__RoleI__286302EC">
             <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersRoles" EntitySet="UsersRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UsersRole__UserI__276EDEB3" Association="Self.FK__UsersRole__UserI__276EDEB3">
             <End Role="Users" EntitySet="Users" />
+            <End Role="UsersRoles" EntitySet="UsersRoles" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -108,7 +149,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="UsersManagementModelStoreContainer" CdmEntityContainer="UsersManagementEntities1">
+        <EntityContainerMapping StorageEntityContainer="UsersManagementModelStoreContainer" CdmEntityContainer="UsersManagementEntities">
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="UsersManagementModel.Roles">
               <MappingFragment StoreEntitySet="Roles">
@@ -126,14 +167,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="UsersRoles" TypeName="UsersManagementModel.UsersRoles" StoreEntitySet="UsersRoles">
-            <EndProperty Name="Roles">
-              <ScalarProperty Name="Id" ColumnName="RoleId" />
-            </EndProperty>
-            <EndProperty Name="Users">
-              <ScalarProperty Name="Id" ColumnName="UserId" />
-            </EndProperty>
-          </AssociationSetMapping>
+          <EntitySetMapping Name="UsersRoles">
+            <EntityTypeMapping TypeName="UsersManagementModel.UsersRoles">
+              <MappingFragment StoreEntitySet="UsersRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -2,16 +2,16 @@
 
 namespace BusinessLayer.Interfaces
 {
-    using DataAccessLayer.DataModel;
+    using BusinessLayer.Dto;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public interface IUserBusiness
     {
-        Task<IEnumerable<Users>> GetAllUsersAsync();
-        Task<Users> GetByIdAsync(int userId);
-        void Insert(Users user);
-        void Update(Users user);
-        void Delete(Users user);
+        Task<IEnumerable<UserDto>> GetAllUsersAsync();
+        Task<UserDto> GetByIdAsync(int userId);
+        void Insert(UserDto user);
+        void Update(UserDto user);
+        void Delete(UserDto user);
     }
 }

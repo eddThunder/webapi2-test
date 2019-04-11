@@ -11,14 +11,14 @@ namespace DataAccessLayer.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly UsersManagementEntities1 _context;
+        private readonly UsersManagementEntities _context;
 
         public UserRepository()
         {
-            _context = new UsersManagementEntities1();
+            _context = new UsersManagementEntities();
         }
 
-        public UserRepository(UsersManagementEntities1 context)
+        public UserRepository(UsersManagementEntities context)
         {
             _context = context;
         }
@@ -40,7 +40,7 @@ namespace DataAccessLayer.Repositories
         {
             try
             {
-                return await _context.Users.Where(user => user.Id == userId).FirstOrDefaultAsync();
+                return await _context.Users.FindAsync(userId);
             }
             catch (Exception ex)
             {

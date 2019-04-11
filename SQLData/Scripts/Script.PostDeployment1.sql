@@ -11,17 +11,6 @@ Post-Deployment Script Template
 */
 
 
-insert into Roles(RoleName) values ('PAGE_1')
-insert into Roles(RoleName) values ('PAGE_2')
-insert into Roles(RoleName) values ('PAGE_3')
-insert into Roles(RoleName) values ('ADMIN')
-
-insert into Users (Username, UserPassword) values ('Joan', 'peperoni')
-insert into Users (Username, UserPassword) values ('Manu', 'motzarella')
-insert into Users (Username, UserPassword) values ('Montse', 'olives')
-insert into Users (Username, UserPassword) values ('zigor', 'fresh')
-insert into Users (Username, UserPassword) values ('Edu', 'superadmin')
-insert into Users (Username, UserPassword) values ('Nuria', 'borrissol')
-
-
-insert into UsersRoles(UserId, RoleId) values (
+--:r .\RolesLoad.sql
+--:r .\UsersLoad.sql
+--:r .\UsersRolesLoad.sql

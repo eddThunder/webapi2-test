@@ -17,13 +17,13 @@ namespace DataAccessLayer.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Roles()
         {
-            this.Users = new HashSet<Users>();
+            this.UsersRoles = new HashSet<UsersRoles>();
         }
     
         public int Id { get; set; }
         public string RoleName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
+        public virtual ICollection<UsersRoles> UsersRoles { get; set; }
     }
 }

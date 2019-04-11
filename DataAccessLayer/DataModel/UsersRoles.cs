@@ -12,19 +12,13 @@ namespace DataAccessLayer.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class UsersRoles
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
-        {
-            this.UsersRoles = new HashSet<UsersRoles>();
-        }
-    
         public int Id { get; set; }
-        public string Username { get; set; }
-        public string UserPassword { get; set; }
+        public int UserId { get; set; }
+        public int RoleId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UsersRoles> UsersRoles { get; set; }
+        public virtual Roles Roles { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

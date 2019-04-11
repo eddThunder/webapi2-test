@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [UsersRoles]
 (
+  Id int identity not null,
   UserId int NOT NULL,
   RoleId int NOT NULL,
   PRIMARY KEY CLUSTERED ( UserId, RoleId ),

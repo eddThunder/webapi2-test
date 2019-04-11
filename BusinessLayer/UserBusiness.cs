@@ -1,49 +1,55 @@
 ﻿
 namespace BusinessLayer
 {
+    using BusinessLayer.Dto;
     using BusinessLayer.Interfaces;
-    using DataAccessLayer.DataModel;
+    using BusinessLayer.Mapper;
     using DataAccessLayer.Interfaces;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     public class UserBusiness : IUserBusiness
     {
         private readonly IUsersData _usersDataService;
+
         public UserBusiness(IUsersData usersDataService)
         {
             this._usersDataService = usersDataService;
         }
 
-        public void Delete(Users user)
+        public void Delete(UserDto user)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Users>> GetAllUsersAsync()
+        public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
         {
-            return await _usersDataService.GetAllUsersAsync();
+            var entityList = await _usersDataService.GetAllUsersAsync();
+            var dtoList = FactoryMapper.MapToDto(entityList.ToList());
+
+            return dtoList;
         }
 
-        public async Task<Users> GetByIdAsync(int userId)
+        public async Task<UserDto> GetByIdAsync(int userId)
         {
-            return await _usersDataService.GetById(userId);
+            var entity = await _usersDataService.GetById(userId);
+            var resultDto = FactoryMapper.MapToDto(entity);
+            
+            return resultDto;
         }
 
-        public void Insert(Users user)
+        public void Insert(UserDto userDto)
         {
-            throw new NotImplementedException();
+            var entity = FactoryMapper.MapToEntity(userDto);
+            _usersDataService.Insert(entity);
         }
 
-        public void InsertUser(Users user)
+        public void Update(UserDto userDto)
         {
-            _usersDataService.Insert(user);
-        }
-
-        public void Update(Users user)
-        {
-            _usersDataService.Update(user);
+            var entity = FactoryMapper.MapToEntity(userDto);
+            _usersDataService.Update(entity);
         }
     }
 }
