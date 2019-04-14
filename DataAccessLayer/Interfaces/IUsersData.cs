@@ -10,8 +10,8 @@ namespace DataAccessLayer.Interfaces
     {
         Task<IEnumerable<Users>> GetAllUsersAsync();
         Task<Users> GetById(int userId);
-        void Insert(Users user);
-        void Update(Users user);
-        void Delete(int EmployeeID);
+        Task Insert(Users user);
+        Task Update(Users user);
+        Task Delete(int EmployeeID);
     }
 }

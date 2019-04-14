@@ -1,14 +1,16 @@
-﻿using DataAccessLayer.DataModel;
-using DataAccessLayer.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace DataAccessLayer.Repositories
 {
+    using DataAccessLayer.DataModel;
+    using DataAccessLayer.Repositories.Interfaces;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Threading.Tasks;
+
+
+
     public class UserRepository : IUserRepository
     {
         private readonly UsersManagementEntities _context;
@@ -48,12 +50,12 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public void Insert(Users user)
+        public async Task Insert(Users user)
         {
             try
             {
                 _context.Entry<Users>(user).State = EntityState.Added;
-                Save();
+                await Save();
             }
             catch (Exception ex)
             {
@@ -61,33 +63,38 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public void Update(Users user)
+        public async Task Update(Users user)
         {
             try
             {
-                _context.Entry<Users>(user).State = EntityState.Modified;
-                Save();
+                 _context.Entry<Users>(user).State = EntityState.Modified;
+                 await Save();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public void Delete(Users user)
+        public async Task Delete(Users user)
         {
             try
             {
                 _context.Entry<Users>(user).State = EntityState.Deleted;
-                Save();
+                await Save();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public void Save()
+        public async Task Save()
         {
-            _context.SaveChangesAsync();
+           await _context.SaveChangesAsync();
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
         }
     }
 }

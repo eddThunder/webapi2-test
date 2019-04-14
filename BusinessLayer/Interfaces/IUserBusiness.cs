@@ -10,8 +10,8 @@ namespace BusinessLayer.Interfaces
     {
         Task<IEnumerable<UserDto>> GetAllUsersAsync();
         Task<UserDto> GetByIdAsync(int userId);
-        void Insert(UserDto user);
-        void Update(UserDto user);
+        Task Insert(UserDto user);
+        Task Update(UserDto user);
         void Delete(UserDto user);
     }
 }

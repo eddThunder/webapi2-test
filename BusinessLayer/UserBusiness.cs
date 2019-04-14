@@ -27,6 +27,7 @@ namespace BusinessLayer
         public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
         {
             var entityList = await _usersDataService.GetAllUsersAsync();
+
             var dtoList = FactoryMapper.MapToDto(entityList.ToList());
 
             return dtoList;
@@ -35,21 +36,24 @@ namespace BusinessLayer
         public async Task<UserDto> GetByIdAsync(int userId)
         {
             var entity = await _usersDataService.GetById(userId);
+
             var resultDto = FactoryMapper.MapToDto(entity);
             
             return resultDto;
         }
 
-        public void Insert(UserDto userDto)
+        public async Task Insert(UserDto userDto)
         {
             var entity = FactoryMapper.MapToEntity(userDto);
-            _usersDataService.Insert(entity);
+
+            await _usersDataService.Insert(entity);
         }
 
-        public void Update(UserDto userDto)
+        public async Task Update(UserDto userDto)
         {
-            var entity = FactoryMapper.MapToEntity(userDto);
-            _usersDataService.Update(entity);
+           var entity = FactoryMapper.MapToEntity(userDto);
+
+           await _usersDataService.Update(entity);
         }
     }
 }

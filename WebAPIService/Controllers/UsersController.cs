@@ -4,7 +4,6 @@ namespace WebAPIService.Controllers
 {
     using BusinessLayer.Dto;
     using BusinessLayer.Interfaces;
-    using DataAccessLayer.DataModel;
     using System;
     using System.Threading.Tasks;
     using System.Web.Http;
@@ -53,11 +52,11 @@ namespace WebAPIService.Controllers
 
         [HttpPut]
         [Route("add")]
-        public void InsertUser(UserDto user)
+        public async Task InsertUser(UserDto user)
         {
             try
             {
-                _userBusinessService.Insert(user);
+                await _userBusinessService.Insert(user);
             }
             catch (Exception ex)
             {
@@ -66,13 +65,13 @@ namespace WebAPIService.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("update")]
-        public void UpdateUser(UserDto user)
+        public async Task UpdateUserAsync(UserDto user)
         {
             try
             {
-                _userBusinessService.Update(user);
+                await _userBusinessService.Update(user);
             }
             catch (Exception ex)
             {
