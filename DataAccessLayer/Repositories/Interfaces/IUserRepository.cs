@@ -13,7 +13,7 @@ namespace DataAccessLayer.Repositories.Interfaces
         Task<Users> GetByIdAsync(int userId);
         Task Insert(Users user);
         Task Update(Users user);
-        Task Delete(Users user);
+        Task Delete(int id);
         Task Save();
         void Dispose();
     }

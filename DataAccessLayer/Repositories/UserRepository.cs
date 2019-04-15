@@ -7,8 +7,8 @@ namespace DataAccessLayer.Repositories
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
+    using System.Linq;
     using System.Threading.Tasks;
-
 
 
     public class UserRepository : IUserRepository
@@ -67,7 +67,12 @@ namespace DataAccessLayer.Repositories
         {
             try
             {
-                 _context.Entry<Users>(user).State = EntityState.Modified;
+                var userEntity = await GetByIdAsync(user.Id);
+
+                _context.Entry<Users>(userEntity).CurrentValues.SetValues(user);
+
+                _context.Entry<Users>(userEntity).State = EntityState.Modified;
+
                  await Save();
             }
             catch (Exception ex)
@@ -75,11 +80,15 @@ namespace DataAccessLayer.Repositories
                 throw ex;
             }
         }
-        public async Task Delete(Users user)
+
+        public async Task Delete(int userId)
         {
             try
             {
+                var user = await _context.Users.FindAsync(userId);
+
                 _context.Entry<Users>(user).State = EntityState.Deleted;
+
                 await Save();
             }
             catch (Exception ex)
@@ -95,6 +104,23 @@ namespace DataAccessLayer.Repositories
         public void Dispose()
         {
             _context.Dispose();
+        }
+
+        private async Task DeleteUserRoles(int userId)
+        {
+            try
+            {
+                var usersRolesToDelete = _context.UsersRoles.Where(x => x.UserId == userId).ToList();
+
+                _context.UsersRoles.RemoveRange(usersRolesToDelete);
+
+                await Save();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
