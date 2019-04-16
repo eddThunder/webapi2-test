@@ -42,6 +42,15 @@ namespace BusinessLayer
             return resultDto;
         }
 
+        public async Task<UserDto> GetByCredentials(string username, string password)
+        {
+            var entity = await _usersDataService.GetByCredentials(username, password);
+
+            var resultDto = FactoryMapper.MapToDto(entity);
+
+            return resultDto;
+        }
+
         public async Task Insert(UserDto userDto)
         {
             var entity = FactoryMapper.MapToEntity(userDto);

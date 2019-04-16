@@ -40,5 +40,10 @@ namespace DataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        public async Task<Users> GetByCredentials(string username, string password)
+        {
+            return await _userRepository.GetByCredentials(username, password);
+        }
     }
 }

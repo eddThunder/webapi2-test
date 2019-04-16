@@ -70,10 +70,14 @@ namespace DataAccessLayer.Repositories
                 var userEntity = await GetByIdAsync(user.Id);
 
                 _context.Entry<Users>(userEntity).CurrentValues.SetValues(user);
-
+              
                 _context.Entry<Users>(userEntity).State = EntityState.Modified;
 
-                 await Save();
+                await DeleteUserRoles(user.Id);
+
+                userEntity.UsersRoles = user.UsersRoles.ToList();
+
+                await Save();
             }
             catch (Exception ex)
             {
@@ -123,5 +127,19 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public async Task<Users> GetByCredentials(string username, string password)
+        {
+            try
+            {
+                var user = await _context.Users.Where(x => x.Username == username && x.UserPassword == password).FirstOrDefaultAsync();
+
+                return user;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
