@@ -2,7 +2,6 @@
 
 namespace WebAPIService.Auth
 {
-    using DataAccessLayer.DataModel;
     using DataAccessLayer.Repositories;
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.OAuth;
@@ -43,7 +42,7 @@ namespace WebAPIService.Auth
             var scope = context.Scope;
 
 
-            //Buscar usuario...
+            //Finding the user
             var user = await _userRepository.GetByCredentials(userName, password);
 
             if (user != null)
@@ -55,7 +54,7 @@ namespace WebAPIService.Auth
                 identity.AddClaim(new Claim("Id", user.Id.ToString()));
                 identity.AddClaim(new Claim("UserName", user.Username));
 
-
+                //Adding the user's roles to claims
                 foreach (var role in user.UsersRoles)
                 {
                     roleClaims.Add(new Claim(ClaimTypes.Role, role.Roles.RoleName));

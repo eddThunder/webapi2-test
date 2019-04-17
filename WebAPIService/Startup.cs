@@ -1,10 +1,13 @@
 ﻿using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
 using System.Web.Http;
 using WebAPIService.Auth;
 
+
+[assembly: OwinStartup(typeof(WebAPIService.Startup))]
 namespace WebAPIService
 {
     public class Startup
@@ -16,6 +19,7 @@ namespace WebAPIService
             ConfigureOAuth(app);
 
             WebApiConfig.Register(config);
+            app.UseCors(CorsOptions.AllowAll);
             app.UseWebApi(config);
         }
 
