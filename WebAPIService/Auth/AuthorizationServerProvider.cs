@@ -13,12 +13,10 @@ namespace WebAPIService.Auth
 
     public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
-        //private readonly IUserBusiness _userBusinessService;
         private readonly UserRepository _userRepository;
 
         public AuthorizationServerProvider()
         {
-            // _userBusinessService = userBusinessService;
             _userRepository = new UserRepository();
         }
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
@@ -60,7 +58,7 @@ namespace WebAPIService.Auth
 
                 foreach (var role in user.UsersRoles)
                 {
-                    roleClaims.Add(new Claim("RoleName", role.Roles.RoleName));
+                    roleClaims.Add(new Claim(ClaimTypes.Role, role.Roles.RoleName));
                 }
 
                 identity.AddClaims(roleClaims);
