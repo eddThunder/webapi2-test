@@ -3,15 +3,12 @@
 
 namespace DataAccessLayer.App_Start
 {
-    using System;
-    using System.Web;
-    using DataAccessLayer.Repositories;
-    using DataAccessLayer.Repositories.Interfaces;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
+    using System;
+    using System.Web;
 
     public static class NinjectWebCommon 
     {
@@ -39,7 +36,7 @@ namespace DataAccessLayer.App_Start
         /// Creates the kernel that will manage your application.
         /// </summary>
         /// <returns>The created kernel.</returns>
-        private static IKernel CreateKernel()
+        public static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
             try

@@ -22,26 +22,6 @@ namespace WebAPIService
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
-            // AutoMapperInitialization();
         }
-
-        //private static void AutoMapperInitialization()
-        //{
-        //    //Map to Entity to Dto
-        //    Mapper.Initialize(mapper => {
-
-        //        mapper.CreateMap<Roles, RoleDto>()
-        //            .ForMember(from => from.IdRole, to => to.MapFrom(src => src.Id))
-        //            .ForMember(from => from.RoleName, to => to.MapFrom(src => src.RoleName));
-
-
-        //        mapper.CreateMap<Users, UserDto>()
-        //        .ForMember(from => from.Roles, to => to.MapFrom(src => src.UsersRoles));
-        //    });
-        //}
-
     }
-
-
 }

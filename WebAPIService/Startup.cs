@@ -1,6 +1,9 @@
-﻿using Microsoft.Owin;
+﻿using DataAccessLayer.App_Start;
+using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
+using Ninject.Web.Common.OwinHost;
+using Ninject.Web.WebApi.OwinHost;
 using Owin;
 using System;
 using System.Web.Http;
@@ -18,9 +21,16 @@ namespace WebAPIService
 
             ConfigureOAuth(app);
 
+            //CORS
             WebApiConfig.Register(config);
             app.UseCors(CorsOptions.AllowAll);
-            app.UseWebApi(config);
+
+            //Ninject
+            var kernel = NinjectWebCommon.CreateKernel();
+            app.UseNinjectMiddleware(() => kernel);
+            app.UseNinjectWebApi(config);
+
+            //app.UseWebApi(config);
         }
 
         public void ConfigureOAuth(IAppBuilder app)

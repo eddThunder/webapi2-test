@@ -44,7 +44,7 @@ namespace WebAPIService.App_Start
         /// Creates the kernel that will manage your application.
         /// </summary>
         /// <returns>The created kernel.</returns>
-        private static IKernel CreateKernel()
+        public static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
             try
@@ -70,7 +70,6 @@ namespace WebAPIService.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-
             kernel.Bind<IUserBusiness>().To<UserBusiness>();
             kernel.Bind<IUsersData>().To<UsersData>();
             kernel.Bind<IUserRepository>().To<UserRepository>();
