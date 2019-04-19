@@ -103,9 +103,13 @@
     <Compile Include="DataModel\UsersRoles.cs">
       <DependentUpon>UsersManagementDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IRoleData.cs" />
     <Compile Include="Interfaces\IUsersData.cs" />
+    <Compile Include="Repositories\Interfaces\IRoleRepository.cs" />
     <Compile Include="Repositories\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repositories\RolesRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="RoleData.cs" />
     <Compile Include="UsersData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -70,9 +70,16 @@ namespace WebAPIService.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            //User dependencies
             kernel.Bind<IUserBusiness>().To<UserBusiness>();
             kernel.Bind<IUsersData>().To<UsersData>();
             kernel.Bind<IUserRepository>().To<UserRepository>();
+
+            //Role dependencies
+            kernel.Bind<IRoleBusiness>().To<RoleBusiness>();
+            kernel.Bind<IRoleData>().To<RoleData>();
+            kernel.Bind<IRoleRepository>().To<RolesRepository>();
         }        
+
     }
 }

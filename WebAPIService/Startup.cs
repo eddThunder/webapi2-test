@@ -29,8 +29,6 @@ namespace WebAPIService
             var kernel = NinjectWebCommon.CreateKernel();
             app.UseNinjectMiddleware(() => kernel);
             app.UseNinjectWebApi(config);
-
-            //app.UseWebApi(config);
         }
 
         public void ConfigureOAuth(IAppBuilder app)
@@ -39,7 +37,7 @@ namespace WebAPIService
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/api/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(5),
                 Provider = new AuthorizationServerProvider()
             };
 

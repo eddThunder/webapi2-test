@@ -70,6 +70,26 @@ namespace BusinessLayer.Mapper
         }
 
         /// <summary>
+        /// Map a list of Roles to RolesDto
+        /// </summary>
+        /// <param name="rolesList"></param>
+        /// <returns></returns>
+        public static List<RoleDto> MapToDto(List<Roles> rolesList)
+        {
+            var dtoList = new List<RoleDto>();
+
+            if (rolesList.Any())
+            {
+                rolesList.ForEach(role => dtoList.Add(new RoleDto
+                {
+                    Id = role.Id,
+                    RoleName = role.RoleName
+                }));
+            }
+            return dtoList;
+        }
+
+        /// <summary>
         /// Map a UserDto to a Users entity
         /// </summary>
         /// <param name="dto"></param>
@@ -105,6 +125,7 @@ namespace BusinessLayer.Mapper
 
             return entityRoleList;
         }
+
 
     }
 }
