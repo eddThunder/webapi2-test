@@ -4,24 +4,27 @@ namespace WebAPIService.Controllers
 {
     using BusinessLayer.Dto;
     using BusinessLayer.Interfaces;
+    using log4net;
     using System;
     using System.Threading.Tasks;
     using System.Web.Http;
 
+    //[Authorize]
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {
         private readonly IUserBusiness _userBusinessService;
-        // private readonly ILogger _logger;
+        private readonly ILog _logger;
 
-        public UsersController(IUserBusiness userBusinessService)
+        public UsersController(IUserBusiness userBusinessService, ILog logger)
         {
             _userBusinessService = userBusinessService;
-            //_logger = logger;
+            _logger = logger;
         }
         
         [HttpGet]
         [Route("all")]
+        //[Authorize(Roles = "ADMIN")]
         public async Task<IHttpActionResult> GetAllUsers()
         {
             try
@@ -30,13 +33,14 @@ namespace WebAPIService.Controllers
             }
             catch (Exception ex)
             {
-                //_logger.LogError("error in UsersController -> GetAllUsersAsync: ", ex);
+                _logger.Error("error in UsersController -> GetAllUsersAsync: ", ex);
                 throw;
             }
         }
 
         [HttpGet]
         [Route("{userId}")]
+        //[Authorize(Roles = "ADMIN")]
         public async Task<IHttpActionResult> GetUserById(int userId)
         {
             try
@@ -45,13 +49,14 @@ namespace WebAPIService.Controllers
             }
             catch(Exception ex)
             {
-                //_logger.LogError("error in UsersController -> GetUserById: ", ex);
-                throw;
+                _logger.Error("error in UsersController -> GetUserById: ", ex);
+                return BadRequest( ex.Message);
             }
         }
 
         [HttpPut]
         [Route("add")]
+        //[Authorize(Roles = "ADMIN")]
         public async Task InsertUser(UserDto user)
         {
             try
@@ -60,13 +65,14 @@ namespace WebAPIService.Controllers
             }
             catch (Exception ex)
             {
-                //Logger...
+                _logger.Error("error in UsersController -> InsertUser: ", ex);
                 throw;
             }
         }
 
         [HttpPost]
         [Route("update")]
+        //[Authorize(Roles = "ADMIN")]
         public async Task UpdateUserAsync(UserDto user)
         {
             try
@@ -75,7 +81,8 @@ namespace WebAPIService.Controllers
             }
             catch (Exception ex)
             {
-                //Logger...
+                _logger.Error("error in UsersController -> UpdateUserAsync: ", ex);
+
                 throw;
             }
         }

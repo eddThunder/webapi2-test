@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interfaces;
+using log4net;
 using System;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -9,9 +10,12 @@ namespace WebAPIService.Controllers
     public class RoleController : ApiController
     {
         private readonly IRoleBusiness _roleBusinessService;
-        public RoleController(IRoleBusiness roleBusinessService)
+        private readonly ILog _logger;
+
+        public RoleController(IRoleBusiness roleBusinessService, ILog logger)
         {
             _roleBusinessService = roleBusinessService;
+            _logger = logger;
         }
 
         [Route("all")]
@@ -23,8 +27,8 @@ namespace WebAPIService.Controllers
             }
             catch (Exception ex)
             {
-                //_logger.LogError("error in UsersController -> GetAllUsersAsync: ", ex);
-                throw;
+                _logger.Error("error in UsersController -> GetUserById: ", ex);
+                return BadRequest(ex.Message);
             }
         }
     }

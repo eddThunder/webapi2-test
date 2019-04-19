@@ -78,7 +78,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="DataModel\Roles.cs">
       <DependentUpon>UsersManagementDataModel.tt</DependentUpon>
     </Compile>
@@ -138,6 +137,9 @@
       <DependentUpon>UsersManagementDataModel.edmx</DependentUpon>
       <LastGenOutput>UsersManagementDataModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Start\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

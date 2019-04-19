@@ -17,6 +17,7 @@ namespace WebAPIService.App_Start
     using System.Web;
     using Ninject.Web.WebApi;
     using System.Web.Http;
+    using log4net;
 
     public static class NinjectWebCommon 
     {
@@ -70,6 +71,9 @@ namespace WebAPIService.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            //log4net...
+            kernel.Bind<ILog>().ToMethod(context => LogManager.GetLogger(context.Request.Target.Member.DeclaringType)).InTransientScope();
+
             //User dependencies
             kernel.Bind<IUserBusiness>().To<UserBusiness>();
             kernel.Bind<IUsersData>().To<UsersData>();

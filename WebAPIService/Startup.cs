@@ -1,5 +1,4 @@
-﻿using DataAccessLayer.App_Start;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Ninject.Web.Common.OwinHost;
@@ -7,9 +6,10 @@ using Ninject.Web.WebApi.OwinHost;
 using Owin;
 using System;
 using System.Web.Http;
+using WebAPIService.App_Start;
 using WebAPIService.Auth;
 
-
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "Web.config", Watch = true)]
 [assembly: OwinStartup(typeof(WebAPIService.Startup))]
 namespace WebAPIService
 {
@@ -29,6 +29,8 @@ namespace WebAPIService
             var kernel = NinjectWebCommon.CreateKernel();
             app.UseNinjectMiddleware(() => kernel);
             app.UseNinjectWebApi(config);
+
+            // app.UseWebApi(config);
         }
 
         public void ConfigureOAuth(IAppBuilder app)
