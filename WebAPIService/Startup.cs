@@ -29,8 +29,6 @@ namespace WebAPIService
             var kernel = NinjectWebCommon.CreateKernel();
             app.UseNinjectMiddleware(() => kernel);
             app.UseNinjectWebApi(config);
-
-            // app.UseWebApi(config);
         }
 
         public void ConfigureOAuth(IAppBuilder app)
