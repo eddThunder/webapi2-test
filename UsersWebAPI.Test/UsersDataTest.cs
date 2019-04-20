@@ -52,7 +52,7 @@ namespace UsersWebAPI.Test
 
             var mockUser = new UserBuilder().ConId(1).ConUsername("tsoukalos").ConPassword("aliens").Build();
 
-            mockedRepo.Setup(m => m.GetByCredentials(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(mockUser);
+            mockedRepo.Setup(m => m.GetByCredentials(mockUser.Username, mockUser.UserPassword)).ReturnsAsync(mockUser);
 
             var sut = new UsersData(mockedRepo.Object);
 
@@ -72,39 +72,62 @@ namespace UsersWebAPI.Test
 
             var mockUser = new UserBuilder().ConId(1).ConUsername("guybrush").ConPassword("threeheadedmonkeys").Build();
 
-            mockedRepo.Setup(m => m.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(mockUser);
+            mockedRepo.Setup(m => m.GetByIdAsync(mockUser.Id)).ReturnsAsync(mockUser);
 
             var sut = new UsersData(mockedRepo.Object);
 
             //Act
-            var result = sut.GetById(mockUser.Id).Result;
+            var result = sut.GetById(1).Result;
 
             //Assert
             Assert.AreEqual(mockUser, result);
             mockedRepo.Verify(m => m.GetByIdAsync(It.IsAny<int>()), Times.Once);
         }
 
-        public void Insert()
+        [TestMethod]
+        public void Insert_Should_InsertUser_OK()
         {
             var mockedRepo = new Mock<IUserRepository>();
 
-            var mockUser = new UserBuilder().ConId(1).ConUsername("guybrush").ConPassword("threeheadedmonkeys").Build();
+            var mockUser = new UserBuilder().ConId(1).ConUsername("LeChuck").ConPassword("elaine").Build();
 
-            mockedRepo.Setup(m => m.Insert(It.IsAny<Users>()));
+            mockedRepo.Setup(m => m.Insert(It.IsAny<Users>())).ReturnsAsync(2);
 
             var sut = new UsersData(mockedRepo.Object);
 
             //Act
-            var result = sut.GetById(mockUser.Id).Result;
+            var result = sut.Insert(mockUser).Result;
 
             //Assert
-            Assert.AreEqual(mockUser, result);
-            mockedRepo.Verify(m => m.GetByIdAsync(It.IsAny<int>()), Times.Once);
+            Assert.AreNotEqual(0, result);
+            mockedRepo.Verify(m => m.Insert(mockUser), Times.Once);
         }
 
-        //public Task Update(Users user)
+        //[TestMethod]
+        //public void Update_ShouldUpdateUser_OK()
         //{
-        //    throw new NotImplementedException();
+        //    var mockedRepo = new Mock<IUserRepository>();
+
+        //    var mockUser = new UserBuilder().ConId(1).ConUsername("Haggis").ConPassword("rock").Build();
+
+        //    mockedRepo.Setup(m => m.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(mockUser);
+        //    mockedRepo.Setup(m => m.Update(It.IsAny<Users>())).ReturnsAsync(2);
+            
+        //    var sut = new UsersData(mockedRepo.Object);
+
+        //    var insertOp = sut.Insert(mockUser).Result;
+
+        //    var originalUser = sut.GetById(mockUser.Id).Result;
+
+        //    //Act
+        //    mockUser.Username = "Rufus";
+
+        //    var result = sut.Update(mockUser).Result;
+        //    var modifiedUser = sut.GetById(originalUser.Id).Result;
+
+        //    //Assert
+        //    Assert.AreNotEqual(originalUser, modifiedUser);
+        //    mockedRepo.Verify(m => m.Update(mockUser), Times.Once);
         //}
 
         private IEnumerable<Users> MockedUsersList()
@@ -113,8 +136,8 @@ namespace UsersWebAPI.Test
             var list = new List<Users>
             {
                 userBuilder.ConId(1).ConUsername("edu").ConPassword("hahaaha").Build(),
-                userBuilder.ConId(1).ConUsername("donaldtduck").ConPassword("jejej").Build(),
-                userBuilder.ConId(1).ConUsername("m.rajoy").ConPassword("cajab").Build()
+                userBuilder.ConId(2).ConUsername("DonaldDuck").ConPassword("jejej").Build(),
+                userBuilder.ConId(3).ConUsername("m.rajoy").ConPassword("cajab").Build()
             };
 
             return list;
