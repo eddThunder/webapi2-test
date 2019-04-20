@@ -9,7 +9,7 @@ namespace WebAPIService.Controllers
     using System.Threading.Tasks;
     using System.Web.Http;
 
-    //[Authorize]
+    [Authorize]
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {
@@ -24,7 +24,7 @@ namespace WebAPIService.Controllers
         
         [HttpGet]
         [Route("all")]
-        //[Authorize(Roles = "ADMIN")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IHttpActionResult> GetAllUsers()
         {
             try
@@ -40,7 +40,7 @@ namespace WebAPIService.Controllers
 
         [HttpGet]
         [Route("{userId}")]
-        //[Authorize(Roles = "ADMIN")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IHttpActionResult> GetUserById(int userId)
         {
             try
@@ -56,7 +56,7 @@ namespace WebAPIService.Controllers
 
         [HttpPut]
         [Route("add")]
-        //[Authorize(Roles = "ADMIN")]
+        [Authorize(Roles = "ADMIN")]
         public async Task InsertUser(UserDto user)
         {
             try
@@ -72,7 +72,7 @@ namespace WebAPIService.Controllers
 
         [HttpPost]
         [Route("update")]
-        //[Authorize(Roles = "ADMIN")]
+        [Authorize(Roles = "ADMIN")]
         public async Task UpdateUserAsync(UserDto user)
         {
             try

@@ -6,6 +6,7 @@ using System.Web.Http;
 
 namespace WebAPIService.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/roles")]
     public class RoleController : ApiController
     {
@@ -19,6 +20,7 @@ namespace WebAPIService.Controllers
         }
 
         [Route("all")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IHttpActionResult> GetAllRoles()
         {
             try
