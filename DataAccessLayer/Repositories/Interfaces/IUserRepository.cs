@@ -12,10 +12,10 @@ namespace DataAccessLayer.Repositories.Interfaces
         Task<IEnumerable<Users>> GetAllUsersAsync();
         Task<Users> GetByIdAsync(int userId);
         Task<Users> GetByCredentials(string username, string password);
-        Task Insert(Users user);
-        Task Update(Users user);
-        Task Delete(int id);
-        Task Save();
+        Task<int> Insert(Users user);
+        Task<int> Update(Users user);
+        Task<int> Delete(int id);
+        Task<int> Save();
         void Dispose();
     }
 }

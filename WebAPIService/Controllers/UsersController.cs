@@ -57,11 +57,11 @@ namespace WebAPIService.Controllers
         [HttpPut]
         [Route("add")]
         [Authorize(Roles = "ADMIN")]
-        public async Task InsertUser(UserDto user)
+        public async Task<IHttpActionResult> InsertUser(UserDto user)
         {
             try
             {
-                await _userBusinessService.Insert(user);
+               return Ok(await _userBusinessService.Insert(user));
             }
             catch (Exception ex)
             {
@@ -73,11 +73,11 @@ namespace WebAPIService.Controllers
         [HttpPost]
         [Route("update")]
         [Authorize(Roles = "ADMIN")]
-        public async Task UpdateUserAsync(UserDto user)
+        public async Task<IHttpActionResult> UpdateUserAsync(UserDto user)
         {
             try
             {
-                await _userBusinessService.Update(user);
+                return Ok(await _userBusinessService.Update(user));
             }
             catch (Exception ex)
             {

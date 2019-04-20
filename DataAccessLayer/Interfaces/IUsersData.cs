@@ -11,8 +11,8 @@ namespace DataAccessLayer.Interfaces
         Task<IEnumerable<Users>> GetAllUsersAsync();
         Task<Users> GetById(int userId);
         Task<Users> GetByCredentials(string username, string password);
-        Task Insert(Users user);
-        Task Update(Users user);
-        Task Delete(int EmployeeID);
+        Task<int> Insert(Users user);
+        Task<int> Update(Users user);
+        Task<int> Delete(int EmployeeID);
     }
 }

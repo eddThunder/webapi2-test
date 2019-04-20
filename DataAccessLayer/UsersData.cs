@@ -26,17 +26,17 @@ namespace DataAccessLayer
             return await _userRepository.GetByIdAsync(userId);
         }
 
-        public async Task Insert(Users user)
+        public async Task<int> Insert(Users user)
         {
-            await _userRepository.Insert(user);
+            return await _userRepository.Insert(user);
         }
 
-        public async Task Update(Users user)
+        public async Task<int> Update(Users user)
         {
-            await _userRepository.Update(user);
+            return await _userRepository.Update(user);
         }
 
-        public async Task Delete(int EmployeeID)
+        public async Task<int> Delete(int EmployeeID)
         {
             throw new NotImplementedException();
         }

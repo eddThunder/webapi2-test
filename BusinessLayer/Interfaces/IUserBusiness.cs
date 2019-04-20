@@ -11,8 +11,8 @@ namespace BusinessLayer.Interfaces
         Task<IEnumerable<UserDto>> GetAllUsersAsync();
         Task<UserDto> GetByIdAsync(int userId);
         Task<UserDto> GetByCredentials(string username, string password);
-        Task Insert(UserDto user);
-        Task Update(UserDto user);
-        void Delete(UserDto user);
+        Task<int> Insert(UserDto user);
+        Task<int> Update(UserDto user);
+        Task<int> Delete(UserDto user);
     }
 }

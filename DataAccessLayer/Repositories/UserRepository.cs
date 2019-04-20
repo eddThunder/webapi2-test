@@ -20,6 +20,7 @@ namespace DataAccessLayer.Repositories
             _context = new UsersManagementEntities();
         }
 
+
         public UserRepository(UsersManagementEntities context)
         {
             _context = context;
@@ -50,12 +51,12 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public async Task Insert(Users user)
+        public async Task<int> Insert(Users user)
         {
             try
             {
                 _context.Entry<Users>(user).State = EntityState.Added;
-                await Save();
+                return await Save();
             }
             catch (Exception ex)
             {
@@ -63,7 +64,7 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public async Task Update(Users user)
+        public async Task<int> Update(Users user)
         {
             try
             {
@@ -77,7 +78,7 @@ namespace DataAccessLayer.Repositories
 
                 userEntity.UsersRoles = user.UsersRoles.ToList();
 
-                await Save();
+                return await Save();
             }
             catch (Exception ex)
             {
@@ -85,7 +86,7 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public async Task Delete(int userId)
+        public async Task<int> Delete(int userId)
         {
             try
             {
@@ -93,16 +94,16 @@ namespace DataAccessLayer.Repositories
 
                 _context.Entry<Users>(user).State = EntityState.Deleted;
 
-                await Save();
+                return await Save();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public async Task Save()
+        public async Task<int> Save()
         {
-           await _context.SaveChangesAsync();
+           return await _context.SaveChangesAsync();
         }
 
         public void Dispose()
@@ -110,7 +111,7 @@ namespace DataAccessLayer.Repositories
             _context.Dispose();
         }
 
-        private async Task DeleteUserRoles(int userId)
+        private async Task<int> DeleteUserRoles(int userId)
         {
             try
             {
@@ -118,7 +119,7 @@ namespace DataAccessLayer.Repositories
 
                 _context.UsersRoles.RemoveRange(usersRolesToDelete);
 
-                await Save();
+                return await Save();
 
             }
             catch (Exception ex)

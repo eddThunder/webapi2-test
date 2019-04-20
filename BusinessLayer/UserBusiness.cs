@@ -19,7 +19,7 @@ namespace BusinessLayer
             this._usersDataService = usersDataService;
         }
 
-        public void Delete(UserDto user)
+        public Task<int> Delete(UserDto user)
         {
             throw new NotImplementedException();
         }
@@ -51,18 +51,18 @@ namespace BusinessLayer
             return resultDto;
         }
 
-        public async Task Insert(UserDto userDto)
+        public async Task<int> Insert(UserDto userDto)
         {
             var entity = FactoryMapper.MapToEntity(userDto);
 
-            await _usersDataService.Insert(entity);
+            return await _usersDataService.Insert(entity);
         }
 
-        public async Task Update(UserDto userDto)
+        public async Task<int> Update(UserDto userDto)
         {
            var entity = FactoryMapper.MapToEntity(userDto);
 
-           await _usersDataService.Update(entity);
+           return await _usersDataService.Update(entity);
         }
     }
 }
