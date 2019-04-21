@@ -12,25 +12,25 @@ namespace UsersWebAPI.Test.Builders
             user = new Users();
         }
 
-        public UserBuilder ConId(int id)
+        public UserBuilder WithId(int id)
         {
             user.Id = id;
             return this;
         }
 
-        public UserBuilder ConUsername(string username)
+        public UserBuilder WithUsername(string username)
         {
             user.Username = username;
             return this;
         }
 
-        public UserBuilder ConPassword(string password)
+        public UserBuilder WithPassword(string password)
         {
             user.UserPassword = password;
             return this;
         }
 
-        public UserBuilder ConRoles(List<UsersRoles> roles)
+        public UserBuilder WithRoles(List<UsersRoles> roles)
         {
             user.UsersRoles = roles;
             return this;

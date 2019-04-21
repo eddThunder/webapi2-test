@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builders\RoleBuilder.cs" />
     <Compile Include="Builders\UserBuilder.cs" />
     <Compile Include="RoleDataTest.cs" />
     <Compile Include="UsersDataTest.cs" />

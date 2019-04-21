@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using BusinessLayer;
-using BusinessLayer.Dto;
-using BusinessLayer.Interfaces;
-using DataAccessLayer;
+﻿using DataAccessLayer;
 using DataAccessLayer.DataModel;
-using DataAccessLayer.Interfaces;
-using DataAccessLayer.Repositories;
 using DataAccessLayer.Repositories.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Collections.Generic;
 using UsersWebAPI.Test.Builders;
 
 namespace UsersWebAPI.Test
@@ -18,10 +11,6 @@ namespace UsersWebAPI.Test
     [TestClass]
     public class UsersDataTest
     {
-        public Task Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         [TestMethod]
         public void GetAllUsersAsync_Should_Return_AllUsers_OK()
@@ -50,7 +39,7 @@ namespace UsersWebAPI.Test
             //Arrange
             var mockedRepo = new Mock<IUserRepository>();
 
-            var mockUser = new UserBuilder().ConId(1).ConUsername("tsoukalos").ConPassword("aliens").Build();
+            var mockUser = new UserBuilder().WithId(1).WithUsername("tsoukalos").WithPassword("aliens").Build();
 
             mockedRepo.Setup(m => m.GetByCredentials(mockUser.Username, mockUser.UserPassword)).ReturnsAsync(mockUser);
 
@@ -70,7 +59,7 @@ namespace UsersWebAPI.Test
             //Arrange
             var mockedRepo = new Mock<IUserRepository>();
 
-            var mockUser = new UserBuilder().ConId(1).ConUsername("guybrush").ConPassword("threeheadedmonkeys").Build();
+            var mockUser = new UserBuilder().WithId(1).WithUsername("guybrush").WithPassword("threeheadedmonkeys").Build();
 
             mockedRepo.Setup(m => m.GetByIdAsync(mockUser.Id)).ReturnsAsync(mockUser);
 
@@ -89,7 +78,7 @@ namespace UsersWebAPI.Test
         {
             var mockedRepo = new Mock<IUserRepository>();
 
-            var mockUser = new UserBuilder().ConId(1).ConUsername("LeChuck").ConPassword("elaine").Build();
+            var mockUser = new UserBuilder().WithId(1).WithUsername("LeChuck").WithPassword("elaine").Build();
 
             mockedRepo.Setup(m => m.Insert(It.IsAny<Users>())).ReturnsAsync(2);
 
@@ -135,9 +124,9 @@ namespace UsersWebAPI.Test
             var userBuilder = new UserBuilder();
             var list = new List<Users>
             {
-                userBuilder.ConId(1).ConUsername("edu").ConPassword("hahaaha").Build(),
-                userBuilder.ConId(2).ConUsername("DonaldDuck").ConPassword("jejej").Build(),
-                userBuilder.ConId(3).ConUsername("m.rajoy").ConPassword("cajab").Build()
+                userBuilder.WithId(1).WithUsername("edu").WithPassword("hahaaha").Build(),
+                userBuilder.WithId(2).WithUsername("DonaldDuck").WithPassword("jejej").Build(),
+                userBuilder.WithId(3).WithUsername("m.rajoy").WithPassword("cajab").Build()
             };
 
             return list;
