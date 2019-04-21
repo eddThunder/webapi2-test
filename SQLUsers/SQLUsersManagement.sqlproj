@@ -25,7 +25,7 @@
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
-    <TargetDatabase>SQLUsers</TargetDatabase>
+    <TargetDatabase>SQLUsersManagement</TargetDatabase>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -69,8 +69,10 @@
     <Build Include="dbo\Tables\Users.sql" />
     <Build Include="dbo\Tables\UsersRoles.sql" />
     <None Include="Scripts\RolesLoad.sql" />
-    <Build Include="Scripts\Script.PostDeployment1.sql" />
     <None Include="Scripts\UsersLoad.sql" />
     <None Include="Scripts\UsersRolesLoad.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

@@ -9,8 +9,6 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-
-
---:r .\RolesLoad.sql
---:r .\UsersLoad.sql
---:r .\UsersRolesLoad.sql
+:r ".\RolesLoad.sql"
+:r ".\UsersLoad.sql"
+:r ".\UsersRolesLoad.sql"
