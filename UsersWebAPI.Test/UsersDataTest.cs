@@ -65,7 +65,7 @@ namespace UsersWebAPI.Test
         }
 
         [TestMethod]
-        public void GetByIdAsync()
+        public void GetByIdAsync_ShouldReturn_SpecificUserBYId_OK()
         {
             //Arrange
             var mockedRepo = new Mock<IUserRepository>();
