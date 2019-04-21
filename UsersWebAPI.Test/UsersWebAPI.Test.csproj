@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builders\UserBuilder.cs" />
+    <Compile Include="RoleDataTest.cs" />
     <Compile Include="UsersDataTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

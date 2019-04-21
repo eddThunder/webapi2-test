@@ -11,6 +11,6 @@ Post-Deployment Script Template
 */
 
 
-:r .\RolesLoad.sql
-:r .\UsersLoad.sql
-:r .\UsersRolesLoad.sql
+--:r .\RolesLoad.sql
+--:r .\UsersLoad.sql
+--:r .\UsersRolesLoad.sql
