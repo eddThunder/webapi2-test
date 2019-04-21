@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SQLUsersManagement</Name>
+    <Name>UsersManagement</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{e3d36098-510e-4e06-b08a-0926aac16aa0}</ProjectGuid>
@@ -25,7 +25,7 @@
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
-    <TargetDatabase>SQLUsersManagement</TargetDatabase>
+    <TargetDatabase>UsersManagement</TargetDatabase>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>

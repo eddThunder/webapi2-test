@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Tests", "1.Tests", "{CCDE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersWebAPI.Test", "UsersWebAPI.Test\UsersWebAPI.Test.csproj", "{F7A74AE8-D1FD-4DAA-9732-8AD7E34CBF6A}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SQLUsersManagement", "SQLUsers\SQLUsersManagement.sqlproj", "{E3D36098-510E-4E06-B08A-0926AAC16AA0}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "UsersManagement", "SQLUsers\UsersManagement.sqlproj", "{E3D36098-510E-4E06-B08A-0926AAC16AA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

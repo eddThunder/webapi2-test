@@ -8,6 +8,7 @@ namespace WebAPIService.Controllers
     using System;
     using System.Threading.Tasks;
     using System.Web.Http;
+    using WebAPIService.Auth.Helpers;
 
     [Authorize]
     [RoutePrefix("api/users")]
@@ -61,6 +62,9 @@ namespace WebAPIService.Controllers
         {
             try
             {
+                var encryptedPass = CryptographyHelper.Encrypt(user.Password);
+                user.Password = encryptedPass;
+
                return Ok(await _userBusinessService.Insert(user));
             }
             catch (Exception ex)

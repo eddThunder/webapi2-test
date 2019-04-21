@@ -3,11 +3,7 @@ using DataAccessLayer.DataModel;
 using DataAccessLayer.Repositories.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UsersWebAPI.Test.Builders;
 
 namespace UsersWebAPI.Test
@@ -15,6 +11,7 @@ namespace UsersWebAPI.Test
     [TestClass]
     public class RoleDataTest
     {
+        [TestMethod]
         public void GetAllRoles_ShouldReturnAllRoles_OK()
         {
             var mockedList = MockedRoleList();
@@ -23,7 +20,6 @@ namespace UsersWebAPI.Test
 
             mockedRepo.Setup(m => m.GetAllRoles()).ReturnsAsync(mockedList);
 
-            //Subject under test...
             var sut = new RoleData(mockedRepo.Object);
 
             //Act
@@ -41,7 +37,9 @@ namespace UsersWebAPI.Test
             List<Roles> roleList = new List<Roles>
             {
                 builder.WithId(1).WithName("PAGE_1").Build(),
-                builder.WithId(2).WithName("PAGE_2").Build()
+                builder.WithId(2).WithName("PAGE_2").Build(),
+                builder.WithId(3).WithName("PAGE_3").Build(),
+                builder.WithId(4).WithName("ADMIN").Build()
             };
 
             return roleList;

@@ -99,6 +99,7 @@ namespace BusinessLayer.Mapper
             var entity = new Users();
             entity.Id = dto.Id;
             entity.Username = dto.UserName;
+            entity.UserPassword = dto.Password;
             entity.UsersRoles = MapToEntity(dto.Roles.ToList(), entity.Id);
 
             return entity;
