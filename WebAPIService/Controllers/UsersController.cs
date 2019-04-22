@@ -62,9 +62,6 @@ namespace WebAPIService.Controllers
         {
             try
             {
-                var encryptedPass = CryptographyHelper.Encrypt(user.Password);
-                user.Password = encryptedPass;
-
                return Ok(await _userBusinessService.Insert(user));
             }
             catch (Exception ex)

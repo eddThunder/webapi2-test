@@ -36,7 +36,7 @@ namespace WebAPIService.Auth
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-
+            
             string userName = context.UserName;
             string password = context.Password;
             var scope = context.Scope;

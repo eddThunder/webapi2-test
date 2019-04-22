@@ -133,7 +133,6 @@ namespace DataAccessLayer.Repositories
             try
             {
                 var user = await _context.Users.Where(x => x.Username == username && x.UserPassword == password).FirstOrDefaultAsync();
-
                 return user;
 
             }

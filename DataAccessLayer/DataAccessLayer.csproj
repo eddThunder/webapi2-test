@@ -102,6 +102,7 @@
     <Compile Include="DataModel\UsersRoles.cs">
       <DependentUpon>UsersManagementDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Cryptography\CryptographyHelper.cs" />
     <Compile Include="Interfaces\IRoleData.cs" />
     <Compile Include="Interfaces\IUsersData.cs" />
     <Compile Include="Repositories\Interfaces\IRoleRepository.cs" />
