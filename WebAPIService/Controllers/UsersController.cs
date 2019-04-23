@@ -6,9 +6,12 @@ namespace WebAPIService.Controllers
     using BusinessLayer.Interfaces;
     using log4net;
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Security.Claims;
     using System.Threading.Tasks;
     using System.Web.Http;
-    using WebAPIService.Auth.Helpers;
+    using WebAPIService.ViewModels;
 
     [Authorize]
     [RoutePrefix("api/users")]
@@ -87,5 +90,27 @@ namespace WebAPIService.Controllers
                 throw;
             }
         }
+
+        [HttpGet]
+        [Route("claims")]
+        public UserViewModel GetUserClaims()
+        {
+            var identity = (ClaimsIdentity)User.Identity;
+
+            var rolesClaim = identity.FindAll(ClaimTypes.Role).ToList();
+
+            var roles = new List<RoleDto>();
+
+            rolesClaim.ForEach(claim => roles.Add(new RoleDto { IdRole = int.Parse(claim.Value), RoleName = claim.ValueType }));
+
+            UserViewModel userInfo = new UserViewModel
+            {
+                Id = int.Parse(identity.FindFirst("Id").Value),
+                UserName = identity.FindFirst("UserName").Value,
+                Roles = roles
+            };
+
+            return userInfo;
+        } 
     }
 }

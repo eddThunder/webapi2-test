@@ -57,7 +57,7 @@ namespace WebAPIService.Auth
                 //Adding the user's roles to claims
                 foreach (var role in user.UsersRoles)
                 {
-                    roleClaims.Add(new Claim(ClaimTypes.Role, role.Roles.RoleName));
+                    roleClaims.Add(new Claim(ClaimTypes.Role, role.Roles.Id.ToString(), role.Roles.RoleName));
                 }
 
                 identity.AddClaims(roleClaims);
