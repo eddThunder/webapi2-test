@@ -20,7 +20,6 @@ namespace WebAPIService.Controllers
         }
 
         [Route("all")]
-        [Authorize(Roles = "ADMIN")]
         public async Task<IHttpActionResult> GetAllRoles()
         {
             try

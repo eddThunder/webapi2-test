@@ -54,16 +54,20 @@ namespace WebAPIService.Auth
                 identity.AddClaim(new Claim("Id", user.Id.ToString()));
                 identity.AddClaim(new Claim("UserName", user.Username));
 
+                var ticketRoles = new List<string>();
+
                 //Adding the user's roles to claims
                 foreach (var role in user.UsersRoles)
                 {
                     roleClaims.Add(new Claim(ClaimTypes.Role, role.Roles.Id.ToString(), role.Roles.RoleName));
+                    ticketRoles.Add(role.Roles.RoleName);
                 }
 
                 identity.AddClaims(roleClaims);
 
                 identity.AddClaim(new Claim("scope", scope.FirstOrDefault()));
                 ticketPropierties.Add("scope", scope.FirstOrDefault().ToString());
+                ticketPropierties.Add("roles", Newtonsoft.Json.JsonConvert.SerializeObject(ticketRoles));
 
                 var ticket = new AuthenticationTicket(identity, new AuthenticationProperties(ticketPropierties));
                 context.Validated(ticket);
