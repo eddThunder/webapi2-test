@@ -60,8 +60,7 @@ namespace BusinessLayer.Mapper
             {
                 roles.ForEach(role => dtoList.Add(new RoleDto
                 {
-                    Id = role.Id,
-                    IdRole = role.RoleId,
+                    Id = role.RoleId,
                     RoleName = role.Roles.RoleName
                 }));
             }
@@ -118,8 +117,7 @@ namespace BusinessLayer.Mapper
             if (rolesDto.Any())
             {
                 rolesDto.ForEach(dto => entityRoleList.Add(new UsersRoles {
-                    Id = dto.Id,
-                    RoleId = dto.IdRole,
+                    RoleId = dto.Id,
                     UserId = userId
                 }));
             }

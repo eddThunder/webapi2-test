@@ -108,7 +108,7 @@ namespace WebAPIService.Controllers
 
             rolesClaim.ForEach(claim => roles.Add(new RoleDto
             {
-                IdRole = allRoles.Where(x => x.RoleName == claim.Value).First().Id,
+                Id = allRoles.Where(x => x.RoleName == claim.Value).First().Id,
                 RoleName = claim.Value
             }));
 

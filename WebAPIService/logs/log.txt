@@ -1,0 +1,140 @@
+ERROR 2019-04-25 21:23:41,037 52817ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 88
+ERROR 2019-04-25 21:23:59,363 71143ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 88
+ERROR 2019-04-25 21:25:35,947 167727ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 88
+ERROR 2019-04-25 21:44:51,083 382945ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.Data.Entity.Infrastructure.DbUpdateException: Conflicting changes detected. This may happen when trying to insert multiple entities with the same key. ---> System.Data.Entity.Core.UpdateException: Conflicting changes detected. This may happen when trying to insert multiple entities with the same key.
+   en System.Data.Entity.Core.Mapping.Update.Internal.TableChangeProcessor.DiagnoseKeyCollision(UpdateCompiler compiler, PropagatorResult change, CompositeKey key, PropagatorResult other)
+   en System.Data.Entity.Core.Mapping.Update.Internal.TableChangeProcessor.ProcessKeys(UpdateCompiler compiler, List`1 changes, Set`1 keys)
+   en System.Data.Entity.Core.Mapping.Update.Internal.TableChangeProcessor.CompileCommands(ChangeNode changeNode, UpdateCompiler compiler)
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<ProduceDynamicCommands>d__a.MoveNext()
+   en System.Linq.Enumerable.<ConcatIterator>d__59`1.MoveNext()
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateCommandOrderer..ctor(IEnumerable`1 commands, UpdateTranslator translator)
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.ProduceCommands()
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<UpdateAsync>d__0.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStoreAsync>d__39.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<ExecuteAsyncImplementation>d__9`1.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesInternalAsync>d__31.MoveNext()
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 88
+ERROR 2019-04-25 21:48:39,200 611062ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.Data.Entity.Infrastructure.DbUpdateException: Conflicting changes detected. This may happen when trying to insert multiple entities with the same key. ---> System.Data.Entity.Core.UpdateException: Conflicting changes detected. This may happen when trying to insert multiple entities with the same key.
+   en System.Data.Entity.Core.Mapping.Update.Internal.TableChangeProcessor.DiagnoseKeyCollision(UpdateCompiler compiler, PropagatorResult change, CompositeKey key, PropagatorResult other)
+   en System.Data.Entity.Core.Mapping.Update.Internal.TableChangeProcessor.ProcessKeys(UpdateCompiler compiler, List`1 changes, Set`1 keys)
+   en System.Data.Entity.Core.Mapping.Update.Internal.TableChangeProcessor.CompileCommands(ChangeNode changeNode, UpdateCompiler compiler)
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<ProduceDynamicCommands>d__a.MoveNext()
+   en System.Linq.Enumerable.<ConcatIterator>d__59`1.MoveNext()
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateCommandOrderer..ctor(IEnumerable`1 commands, UpdateTranslator translator)
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.ProduceCommands()
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<UpdateAsync>d__0.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStoreAsync>d__39.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<ExecuteAsyncImplementation>d__9`1.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesInternalAsync>d__31.MoveNext()
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 88
