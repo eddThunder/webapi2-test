@@ -8,14 +8,14 @@ namespace WebAPIService.Auth
     {
         protected override void HandleUnauthorizedRequest(HttpActionContext actionContext)
         {
-            if (!HttpContext.Current.User.Identity.IsAuthenticated)
-            {
-                base.HandleUnauthorizedRequest(actionContext);
-            }
-            else
-            {
-                actionContext.Response = new System.Net.Http.HttpResponseMessage(HttpStatusCode.Forbidden);
-            }
+            //if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            //{
+            //    base.HandleUnauthorizedRequest(actionContext);
+            //}
+            //else
+            //{
+            //    actionContext.Response = new System.Net.Http.HttpResponseMessage(HttpStatusCode.Forbidden);
+            //}
         }
     }
 }

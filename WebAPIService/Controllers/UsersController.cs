@@ -18,11 +18,14 @@ namespace WebAPIService.Controllers
     public class UsersController : ApiController
     {
         private readonly IUserBusiness _userBusinessService;
+        private readonly IRoleBusiness _roleBusiness;
+
         private readonly ILog _logger;
 
-        public UsersController(IUserBusiness userBusinessService, ILog logger)
+        public UsersController(IUserBusiness userBusinessService, ILog logger, IRoleBusiness roleBusiness)
         {
             _userBusinessService = userBusinessService;
+            _roleBusiness = roleBusiness;
             _logger = logger;
         }
         
@@ -81,6 +84,7 @@ namespace WebAPIService.Controllers
         {
             try
             {
+
                 return Ok(await _userBusinessService.Update(user));
             }
             catch (Exception ex)
@@ -93,15 +97,21 @@ namespace WebAPIService.Controllers
 
         [HttpGet]
         [Route("claims")]
-        public UserViewModel GetUserClaims()
+        public async Task<UserViewModel> GetUserClaims()
         {
             var identity = (ClaimsIdentity)User.Identity;
 
+            var allRoles = await _roleBusiness.GetAllRoles();
             var rolesClaim = identity.FindAll(ClaimTypes.Role).ToList();
 
             var roles = new List<RoleDto>();
 
-            rolesClaim.ForEach(claim => roles.Add(new RoleDto { IdRole = int.Parse(claim.Value), RoleName = claim.ValueType }));
+            rolesClaim.ForEach(claim => roles.Add(new RoleDto
+            {
+                IdRole = allRoles.Where(x => x.RoleName == claim.Value).First().Id,
+                RoleName = claim.Value
+            }));
+
 
             UserViewModel userInfo = new UserViewModel
             {
