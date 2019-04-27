@@ -36,9 +36,9 @@ namespace DataAccessLayer
             return await _userRepository.Update(user);
         }
 
-        public async Task<int> Delete(int EmployeeID)
+        public async Task<int> Delete(int userId)
         {
-            throw new NotImplementedException();
+            return await _userRepository.Delete(userId);
         }
 
         public async Task<Users> GetByCredentials(string username, string password)

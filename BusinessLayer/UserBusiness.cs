@@ -19,9 +19,9 @@ namespace BusinessLayer
             this._usersDataService = usersDataService;
         }
 
-        public Task<int> Delete(UserDto user)
+        public async Task<int> DeleteAsync(int userId)
         {
-            throw new NotImplementedException();
+            return await _usersDataService.Delete(userId);
         }
 
         public async Task<IEnumerable<UserDto>> GetAllUsersAsync()

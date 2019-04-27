@@ -8,6 +8,7 @@ namespace WebAPIService.Controllers
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net;
     using System.Security.Claims;
     using System.Threading.Tasks;
     using System.Web.Http;
@@ -41,7 +42,7 @@ namespace WebAPIService.Controllers
             catch (Exception ex)
             {
                 _logger.Error("error in UsersController -> GetAllUsersAsync: ", ex);
-                throw;
+                return BadRequest(ex.Message);
             }
         }
 
@@ -52,7 +53,17 @@ namespace WebAPIService.Controllers
         {
             try
             {
-                return Ok(await _userBusinessService.GetByIdAsync(userId));
+                var user = await _userBusinessService.GetByIdAsync(userId);
+
+                if(user != null)
+                {
+                    return Ok(user);
+                }
+                else
+                {
+                    return NotFound();
+                }
+                
             }
             catch(Exception ex)
             {
@@ -73,7 +84,7 @@ namespace WebAPIService.Controllers
             catch (Exception ex)
             {
                 _logger.Error("error in UsersController -> InsertUser: ", ex);
-                throw;
+                return BadRequest(ex.Message);
             }
         }
 
@@ -84,14 +95,27 @@ namespace WebAPIService.Controllers
         {
             try
             {
-
                 return Ok(await _userBusinessService.Update(user));
             }
             catch (Exception ex)
             {
                 _logger.Error("error in UsersController -> UpdateUserAsync: ", ex);
-
-                throw;
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("delete/{userId}")]
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IHttpActionResult> DeleteUser(int userId)
+        {
+            try
+            {
+                return Ok(await _userBusinessService.DeleteAsync(userId));
+            }
+            catch(Exception ex)
+            {
+                _logger.Error("error in UsersController -> DeleteUser: ", ex);
+                return BadRequest(ex.Message);
             }
         }
 
