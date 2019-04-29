@@ -40,7 +40,7 @@ namespace WebAPIService
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/api/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(5),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(20),
                 Provider = new AuthorizationServerProvider()
             };
 

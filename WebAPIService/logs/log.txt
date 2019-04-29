@@ -138,3 +138,93 @@ System.Data.Entity.Infrastructure.DbUpdateException: Conflicting changes detecte
    en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
    en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 88
+ERROR 2019-04-29 16:17:45,998 25161465ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 98
+ERROR 2019-04-29 16:17:49,873 25165340ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 98
+ERROR 2019-04-29 16:19:07,450 25242917ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 98
+ERROR 2019-04-29 16:21:48,207 25403674ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 98
+ERROR 2019-04-29 16:22:18,968 25434434ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 86
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 98
