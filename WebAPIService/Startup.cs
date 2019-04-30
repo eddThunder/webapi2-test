@@ -30,8 +30,6 @@ namespace WebAPIService
             app.UseNinjectMiddleware(() => kernel);
             app.UseNinjectWebApi(config);
 
-            // app.UseWebApi(config);
-
         }
 
         public void ConfigureOAuth(IAppBuilder app)

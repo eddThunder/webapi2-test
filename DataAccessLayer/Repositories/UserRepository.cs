@@ -70,8 +70,9 @@ namespace DataAccessLayer.Repositories
             {
                 var userEntity = await GetByIdAsync(user.Id);
 
-                // Solo se modifican roles y username
                 userEntity.Username = user.Username;
+
+                userEntity.UserPassword = user.UserPassword;
               
                 _context.Entry<Users>(userEntity).State = EntityState.Modified;
 
