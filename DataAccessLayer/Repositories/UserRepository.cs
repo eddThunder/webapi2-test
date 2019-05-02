@@ -142,10 +142,6 @@ namespace DataAccessLayer.Repositories
                 throw ex;
             }
         }
-        public async Task<int> Save()
-        {
-            return await _context.SaveChangesAsync();
-        }
 
         private async Task<int> DeleteUserRoles(int userId)
         {
