@@ -9,8 +9,7 @@ namespace DataAccessLayer.Repositories
     using System.Data.Entity;
     using System.Linq;
     using System.Threading.Tasks;
-
-
+    
     public class UserRepository : IUserRepository
     {
         private readonly UsersManagementEntities _context;
@@ -25,14 +24,14 @@ namespace DataAccessLayer.Repositories
         {
             try
             {
-                using (UsersManagementEntities rm = new UsersManagementEntities())
+                using (UsersManagementEntities ctx = new UsersManagementEntities())
                 {
-                    var users= await rm.Users.Include(x => x.UsersRoles).ToListAsync();
+                    var users= await ctx.Users.Include(x => x.UsersRoles).ToListAsync();
                     foreach (var item in users)
                     {
                         if (item.UsersRoles.Any())
                         {
-                            var userRoles = await rm.UsersRoles.Where(x => x.UserId == item.Id).Include(x => x.Roles).ToListAsync();
+                            var userRoles = await ctx.UsersRoles.Where(x => x.UserId == item.Id).Include(x => x.Roles).ToListAsync();
                             item.UsersRoles = new List<UsersRoles>(userRoles);
                         }
                     }
@@ -122,14 +121,19 @@ namespace DataAccessLayer.Repositories
         {
             try
             {
-                using (UsersManagementEntities rm = new UsersManagementEntities())
+                using (UsersManagementEntities ctx = new UsersManagementEntities())
                 {
-                    var user = await rm.Users.FindAsync(userId);
+                    var user = await ctx.Users.FindAsync(userId);
 
-                    _context.Entry<Users>(user).State = EntityState.Deleted;
-                    rm.Set<Users>().Attach(user);
-                    rm.Set<Users>().Remove(user);
-                    return await rm.SaveChangesAsync();
+                    if(user != null)
+                    {
+                        await DeleteUserRoles(user.Id);
+                        ctx.Set<Users>().Attach(user);
+                        ctx.Set<Users>().Remove(user);
+
+                        return await ctx.SaveChangesAsync();
+                    }
+                    return 0;
                 }
             }
             catch (Exception ex)
@@ -146,19 +150,19 @@ namespace DataAccessLayer.Repositories
         {
             try
             {
-                using (UsersManagementEntities rm = new UsersManagementEntities())
+                using (UsersManagementEntities ctx = new UsersManagementEntities())
                 {
-                    var usersRolesToDelete = rm.UsersRoles.Where(x => x.UserId == userId).ToList();
+                    var usersRolesToDelete = ctx.UsersRoles.Where(x => x.UserId == userId).ToList();
 
                     if (!usersRolesToDelete.Any()) return 0;
 
                     foreach (var item in usersRolesToDelete)
                     {
-                        rm.Set<UsersRoles>().Attach(item);
+                        ctx.Set<UsersRoles>().Attach(item);
                     }
-                    rm.Set<UsersRoles>().RemoveRange(usersRolesToDelete);
+                    ctx.Set<UsersRoles>().RemoveRange(usersRolesToDelete);
 
-                    return await rm.SaveChangesAsync();
+                    return await ctx.SaveChangesAsync();
                 }
             }
             catch (Exception ex)
@@ -171,13 +175,13 @@ namespace DataAccessLayer.Repositories
         {
             try
             {
-                using (UsersManagementEntities rm = new UsersManagementEntities())
+                using (UsersManagementEntities ctx = new UsersManagementEntities())
                 {
-                    var result = await rm.Users.Where(x => x.Username == username && x.UserPassword == password).FirstOrDefaultAsync();
+                    var result = await ctx.Users.Where(x => x.Username == username && x.UserPassword == password).FirstOrDefaultAsync();
 
                     if (result.UsersRoles.Any())
                     {
-                        var urs = await rm.UsersRoles.Where(x => x.UserId == result.Id).Include(x => x.Roles).ToListAsync();
+                        var urs = await ctx.UsersRoles.Where(x => x.UserId == result.Id).Include(x => x.Roles).ToListAsync();
                         result.UsersRoles = new List<UsersRoles>(urs);
                     }
 

@@ -1,7 +1,6 @@
 ﻿using BusinessLayer.Dto;
 using BusinessLayer.Interfaces;
 using BusinessLayer.Mapper;
-using DataAccessLayer.DataModel;
 using DataAccessLayer.Interfaces;
 using System.Collections.Generic;
 using System.Linq;

@@ -92,33 +92,6 @@ namespace UsersWebAPI.Test
             mockedRepo.Verify(m => m.Insert(mockUser), Times.Once);
         }
 
-        //[TestMethod]
-        //public void Update_ShouldUpdateUser_OK()
-        //{
-        //    var mockedRepo = new Mock<IUserRepository>();
-
-        //    var mockUser = new UserBuilder().ConId(1).ConUsername("Haggis").ConPassword("rock").Build();
-
-        //    mockedRepo.Setup(m => m.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(mockUser);
-        //    mockedRepo.Setup(m => m.Update(It.IsAny<Users>())).ReturnsAsync(2);
-            
-        //    var sut = new UsersData(mockedRepo.Object);
-
-        //    var insertOp = sut.Insert(mockUser).Result;
-
-        //    var originalUser = sut.GetById(mockUser.Id).Result;
-
-        //    //Act
-        //    mockUser.Username = "Rufus";
-
-        //    var result = sut.Update(mockUser).Result;
-        //    var modifiedUser = sut.GetById(originalUser.Id).Result;
-
-        //    //Assert
-        //    Assert.AreNotEqual(originalUser, modifiedUser);
-        //    mockedRepo.Verify(m => m.Update(mockUser), Times.Once);
-        //}
-
         private IEnumerable<Users> MockedUsersList()
         {
             var userBuilder = new UserBuilder();

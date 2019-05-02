@@ -592,3 +592,111 @@ System.ObjectDisposedException: The ObjectContext instance has been disposed and
    en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
    en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 15:03:35,065 6044523ms UsersController        MoveNext           - error in UsersController -> DeleteUser: 
+System.InvalidOperationException: An entity object cannot be referenced by multiple instances of IEntityChangeTracker.
+   en DataAccessLayer.Repositories.UserRepository.<Delete>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 136
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Delete>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 41
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<DeleteAsync>d__2.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<DeleteUser>d__8.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 112
+ERROR 2019-05-02 15:03:42,940 6052398ms UsersController        MoveNext           - error in UsersController -> DeleteUser: 
+System.InvalidOperationException: An entity object cannot be referenced by multiple instances of IEntityChangeTracker.
+   en DataAccessLayer.Repositories.UserRepository.<Delete>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 136
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Delete>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 41
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<DeleteAsync>d__2.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<DeleteUser>d__8.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 112
+ERROR 2019-05-02 15:04:38,199 6107657ms UsersController        MoveNext           - error in UsersController -> DeleteUser: 
+System.InvalidOperationException: An entity object cannot be referenced by multiple instances of IEntityChangeTracker.
+   en DataAccessLayer.Repositories.UserRepository.<Delete>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Delete>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<DeleteAsync>d__2.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<DeleteUser>d__8.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 112
+ERROR 2019-05-02 15:05:31,895 6161353ms UsersController        MoveNext           - error in UsersController -> DeleteUser: 
+System.InvalidOperationException: An entity object cannot be referenced by multiple instances of IEntityChangeTracker.
+   en DataAccessLayer.Repositories.UserRepository.<Delete>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Delete>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<DeleteAsync>d__2.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<DeleteUser>d__8.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 112
+ERROR 2019-05-02 15:05:51,363 6180822ms UsersController        MoveNext           - error in UsersController -> DeleteUser: 
+System.InvalidOperationException: The object cannot be deleted because it was not found in the ObjectStateManager.
+   en DataAccessLayer.Repositories.UserRepository.<Delete>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Delete>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<DeleteAsync>d__2.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<DeleteUser>d__8.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 112
+ERROR 2019-05-02 15:11:32,668 69068ms UsersController        MoveNext           - error in UsersController -> DeleteUser: 
+System.InvalidOperationException: An entity object cannot be referenced by multiple instances of IEntityChangeTracker.
+   en DataAccessLayer.Repositories.UserRepository.<Delete>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Delete>d__6.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<DeleteAsync>d__2.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<DeleteUser>d__8.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 112
