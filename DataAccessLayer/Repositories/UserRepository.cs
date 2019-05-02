@@ -15,12 +15,6 @@ namespace DataAccessLayer.Repositories
     {
         private readonly UsersManagementEntities _context;
 
-        //public UserRepository()
-        //{
-        //    _context = new UsersManagementEntities();
-        //}
-
-
         public UserRepository(UsersManagementEntities context)
         {
             _context = context;
@@ -33,16 +27,16 @@ namespace DataAccessLayer.Repositories
             {
                 using (UsersManagementEntities rm = new UsersManagementEntities())
                 {
-                    var ar= await rm.Users.Include(x => x.UsersRoles).ToListAsync();
-                    foreach (var item in ar)
+                    var users= await rm.Users.Include(x => x.UsersRoles).ToListAsync();
+                    foreach (var item in users)
                     {
                         if (item.UsersRoles.Any())
                         {
-                            var urs = await rm.UsersRoles.Where(x => x.UserId == item.Id).Include(x => x.Roles).ToListAsync();
-                            item.UsersRoles = new List<UsersRoles>(urs);
+                            var userRoles = await rm.UsersRoles.Where(x => x.UserId == item.Id).Include(x => x.Roles).ToListAsync();
+                            item.UsersRoles = new List<UsersRoles>(userRoles);
                         }
                     }
-                    return ar;
+                    return users;
                 }
             }
             catch (Exception ex)
@@ -55,14 +49,14 @@ namespace DataAccessLayer.Repositories
         {
             try
             {
-                using (UsersManagementEntities rm = new UsersManagementEntities())
+                using (UsersManagementEntities ctx = new UsersManagementEntities())
                 {
-                    var result = await rm.Users.Where(x => x.Id == userId).FirstOrDefaultAsync();
+                    var result = await ctx.Users.Where(x => x.Id == userId).FirstOrDefaultAsync();
 
                     if (result.UsersRoles.Any() || result.UsersRoles == null)
                     {
-                        var urs = await rm.UsersRoles.Where(x => x.UserId == userId).Include(x=> x.Roles).ToListAsync();
-                        result.UsersRoles = new List<UsersRoles>(urs);
+                        var userRoles = await ctx.UsersRoles.Where(x => x.UserId == userId).Include(x=> x.Roles).ToListAsync();
+                        result.UsersRoles = new List<UsersRoles>(userRoles);
                     }
 
                     return result;
@@ -74,23 +68,15 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public async Task<IEnumerable<Roles>> GetRolesByUserId(int userId)
-        {
-            //
-            return null;
-        }
-
-
-
         public async Task<int> Insert(Users user)
         {
             try
             {
-                using (UsersManagementEntities rm = new UsersManagementEntities())
+                using (UsersManagementEntities ctx = new UsersManagementEntities())
                 {
-                    rm.Entry<Users>(user).State = EntityState.Added;
+                    ctx.Entry<Users>(user).State = EntityState.Added;
 
-                    var resultUpdate = await rm.SaveChangesAsync();
+                    var resultUpdate = await ctx.SaveChangesAsync();
 
                     return resultUpdate;
                 }
@@ -108,17 +94,16 @@ namespace DataAccessLayer.Repositories
                 var resultDeleteRoles = await DeleteUserRoles(user.Id);
                 if (resultDeleteRoles != 0)
                 {
-                    using (UsersManagementEntities rm = new UsersManagementEntities())
+                    using (UsersManagementEntities ctx = new UsersManagementEntities())
                     {
-                        var userEntity = await rm.Set<Users>().FindAsync(user.Id);
+                        var userEntity = await ctx.Set<Users>().FindAsync(user.Id);
                         if (userEntity != null)
                         {
-                            //rm.Set<Users>().Attach(user);
                             userEntity.UsersRoles = new List<UsersRoles>();
                             userEntity.UsersRoles = user.UsersRoles;
-                            rm.Entry<Users>(userEntity).State = EntityState.Modified;
+                            ctx.Entry<Users>(userEntity).State = EntityState.Modified;
 
-                            var resultUpdate = await rm.SaveChangesAsync();
+                            var resultUpdate = await ctx.SaveChangesAsync();
 
                             return resultUpdate;
                         }
@@ -155,11 +140,6 @@ namespace DataAccessLayer.Repositories
         public async Task<int> Save()
         {
             return await _context.SaveChangesAsync();
-        }
-
-        public void Dispose()
-        {
-            _context.Dispose();
         }
 
         private async Task<int> DeleteUserRoles(int userId)

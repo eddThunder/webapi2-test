@@ -18,8 +18,8 @@ namespace DataAccessLayer.Repositories
         {
             using (var ctx = new UsersManagementEntities())
             {
-                var asdasd = await ctx.Roles.ToListAsync();
-                return asdasd;
+                var roles = await ctx.Roles.ToListAsync();
+                return roles;
             }
         }
     }
