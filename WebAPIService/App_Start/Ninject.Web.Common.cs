@@ -18,6 +18,9 @@ namespace WebAPIService.App_Start
     using Ninject.Web.WebApi;
     using System.Web.Http;
     using log4net;
+    using System.Data.Entity;
+    using DataAccessLayer.DataModel;
+    using System.Configuration;
 
     public static class NinjectWebCommon 
     {
@@ -71,18 +74,22 @@ namespace WebAPIService.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            // kernel.Bind<DbContext>().To<UsersManagementEntities>().InTransientScope().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["UsersManagementEntities"].ConnectionString);
+
             //log4net...
             kernel.Bind<ILog>().ToMethod(context => LogManager.GetLogger(context.Request.Target.Member.DeclaringType)).InTransientScope();
 
             //User dependencies
-            kernel.Bind<IUserBusiness>().To<UserBusiness>();
-            kernel.Bind<IUsersData>().To<UsersData>();
-            kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<IUserRepository>().To<UserRepository>().InSingletonScope();
+            kernel.Bind<IUserBusiness>().To<UserBusiness>().InSingletonScope();
+            kernel.Bind<IUsersData>().To<UsersData>().InSingletonScope();
+
 
             //Role dependencies
-            kernel.Bind<IRoleBusiness>().To<RoleBusiness>();
-            kernel.Bind<IRoleData>().To<RoleData>();
-            kernel.Bind<IRoleRepository>().To<RolesRepository>();
+            kernel.Bind<IRoleRepository>().To<RolesRepository>().InRequestScope();
+            kernel.Bind<IRoleBusiness>().To<RoleBusiness>().InRequestScope();
+            kernel.Bind<IRoleData>().To<RoleData>().InRequestScope();
+           
         }        
 
     }

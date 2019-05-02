@@ -228,3 +228,367 @@ System.NullReferenceException: Referencia a objeto no establecida como instancia
    en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
    en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 98
+ERROR 2019-05-01 21:21:11,261 61008ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.InvalidOperationException: The entity type List`1 is not part of the model for the current context.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 89
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 97
+ERROR 2019-05-01 21:21:15,404 65151ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.InvalidOperationException: The entity type List`1 is not part of the model for the current context.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 89
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 97
+ERROR 2019-05-01 22:21:31,919 48636ms UsersController        MoveNext           - error in UsersController -> UpdateUserAsync: 
+System.InvalidOperationException: Reload cannot be used for entities in the Added state.
+   en DataAccessLayer.Repositories.UserRepository.<Update>d__6.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 93
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<Update>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 36
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<Update>d__7.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<UpdateUserAsync>d__7.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 97
+ERROR 2019-05-02 09:40:07,757 25720ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(List`1 collection, MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__1(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.Users_D14047590A8F48DF68387E80279D4223F77FA0EE6558BACC53EB074A88A01CBA.get_UsersRoles()
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 09:40:19,778 37741ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.UsersRoles_425F43F138CF6E66153D578D6696C863F9757661BE6B3478340CD2F999977A27.get_Roles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass3_0.<MapToDto>b__0(UsersRoles role)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 roles)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 09:40:49,595 67558ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(List`1 collection, MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__1(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.Users_D14047590A8F48DF68387E80279D4223F77FA0EE6558BACC53EB074A88A01CBA.get_UsersRoles()
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 09:53:50,971 31233ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.UsersRoles_425F43F138CF6E66153D578D6696C863F9757661BE6B3478340CD2F999977A27.get_Roles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass3_0.<MapToDto>b__0(UsersRoles role)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 roles)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 09:59:45,573 36145ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.UsersRoles_425F43F138CF6E66153D578D6696C863F9757661BE6B3478340CD2F999977A27.get_Roles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass3_0.<MapToDto>b__0(UsersRoles role)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 roles)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 10:00:04,553 55125ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.UsersRoles_425F43F138CF6E66153D578D6696C863F9757661BE6B3478340CD2F999977A27.get_Roles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass3_0.<MapToDto>b__0(UsersRoles role)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 roles)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 10:00:14,054 64626ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.UsersRoles_425F43F138CF6E66153D578D6696C863F9757661BE6B3478340CD2F999977A27.get_Roles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass3_0.<MapToDto>b__0(UsersRoles role)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 roles)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 10:00:27,047 77619ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.UsersRoles_425F43F138CF6E66153D578D6696C863F9757661BE6B3478340CD2F999977A27.get_Roles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass3_0.<MapToDto>b__0(UsersRoles role)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 roles)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 10:43:28,514 35763ms UsersController        MoveNext           - error in UsersController -> GetAllUsersAsync: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(List`1 collection, MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__1(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.Users_D14047590A8F48DF68387E80279D4223F77FA0EE6558BACC53EB074A88A01CBA.get_UsersRoles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass2_0.<MapToDto>b__0(Users user)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 users)
+   en BusinessLayer.UserBusiness.<GetAllUsersAsync>d__3.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetAllUsers>d__4.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 39
+ERROR 2019-05-02 10:43:34,346 41595ms UsersController        MoveNext           - error in UsersController -> GetAllUsersAsync: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(List`1 collection, MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__1(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.Users_D14047590A8F48DF68387E80279D4223F77FA0EE6558BACC53EB074A88A01CBA.get_UsersRoles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass2_0.<MapToDto>b__0(Users user)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 users)
+   en BusinessLayer.UserBusiness.<GetAllUsersAsync>d__3.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetAllUsers>d__4.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 39
+ERROR 2019-05-02 10:43:52,087 59335ms UsersController        MoveNext           - error in UsersController -> GetAllUsersAsync: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(List`1 collection, MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__1(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.Users_D14047590A8F48DF68387E80279D4223F77FA0EE6558BACC53EB074A88A01CBA.get_UsersRoles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass2_0.<MapToDto>b__0(Users user)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 users)
+   en BusinessLayer.UserBusiness.<GetAllUsersAsync>d__3.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetAllUsers>d__4.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 39
+ERROR 2019-05-02 10:43:55,209 62458ms UsersController        MoveNext           - error in UsersController -> GetAllUsersAsync: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(List`1 collection, MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__1(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.Users_D14047590A8F48DF68387E80279D4223F77FA0EE6558BACC53EB074A88A01CBA.get_UsersRoles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass2_0.<MapToDto>b__0(Users user)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 users)
+   en BusinessLayer.UserBusiness.<GetAllUsersAsync>d__3.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetAllUsers>d__4.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 39
+ERROR 2019-05-02 10:44:45,612 112861ms UsersController        MoveNext           - error in UsersController -> GetAllUsersAsync: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(List`1 collection, MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__1(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.Users_D14047590A8F48DF68387E80279D4223F77FA0EE6558BACC53EB074A88A01CBA.get_UsersRoles()
+   en BusinessLayer.Mapper.FactoryMapper.<>c__DisplayClass2_0.<MapToDto>b__0(Users user)
+   en System.Collections.Generic.List`1.ForEach(Action`1 action)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 users)
+   en BusinessLayer.UserBusiness.<GetAllUsersAsync>d__3.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetAllUsers>d__4.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 39
+ERROR 2019-05-02 11:04:13,260 143296ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.UsersRoles_425F43F138CF6E66153D578D6696C863F9757661BE6B3478340CD2F999977A27.get_Roles()
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 roles)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 11:04:23,455 153490ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.UsersRoles_425F43F138CF6E66153D578D6696C863F9757661BE6B3478340CD2F999977A27.get_Roles()
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 roles)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55
+ERROR 2019-05-02 11:06:55,373 305408ms UsersController        MoveNext           - error in UsersController -> GetUserById: 
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.get_Connection()
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.Execute(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.EntityReference`1.Load(MergeOption mergeOption)
+   en System.Data.Entity.Core.Objects.DataClasses.RelatedEnd.DeferredLoad()
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.LoadProperty[TItem](TItem propertyValue, String relationshipName, String targetRoleName, Boolean mustBeNull, Object wrapperObject)
+   en System.Data.Entity.Core.Objects.Internal.LazyLoadBehavior.<>c__DisplayClass7`2.<GetInterceptorDelegate>b__2(TProxy proxy, TItem item)
+   en System.Data.Entity.DynamicProxies.UsersRoles_425F43F138CF6E66153D578D6696C863F9757661BE6B3478340CD2F999977A27.get_Roles()
+   en BusinessLayer.Mapper.FactoryMapper.MapToDto(List`1 roles)
+   en BusinessLayer.Mapper.FactoryMapper.MapToDtoWithPassword(Users user)
+   en BusinessLayer.UserBusiness.<GetByIdAsync>d__4.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetUserById>d__5.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 55

@@ -26,6 +26,22 @@ namespace BusinessLayer.Mapper
         }
 
         /// <summary>
+        /// Map user Users to a dto object with password
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>UserDto</returns>
+        public static UserDto MapToDtoWithPassword(Users user)
+        {
+            var dto = new UserDto();
+            dto.Id = user.Id;
+            dto.UserName = user.Username;
+            dto.Password = user.UserPassword;
+            dto.Roles = MapToDto(user.UsersRoles.ToList());
+
+            return dto;
+        }
+
+        /// <summary>
         /// Map a list of User entities to a list of UserDto
         /// </summary>
         /// <param name="users"></param>
@@ -64,7 +80,7 @@ namespace BusinessLayer.Mapper
                     RoleName = role.Roles.RoleName
                 }));
             }
-           
+
             return dtoList;
         }
 

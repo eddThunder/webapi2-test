@@ -2,6 +2,7 @@
 
 namespace WebAPIService.Auth
 {
+    using DataAccessLayer.DataModel;
     using DataAccessLayer.Repositories;
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.OAuth;
@@ -16,7 +17,7 @@ namespace WebAPIService.Auth
 
         public AuthorizationServerProvider()
         {
-            _userRepository = new UserRepository();
+            _userRepository = new UserRepository(new UsersManagementEntities());
         }
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
@@ -41,12 +42,11 @@ namespace WebAPIService.Auth
             string password = context.Password;
             var scope = context.Scope;
 
-
             //Finding the user
             var user = await _userRepository.GetByCredentials(userName, password);
 
             if (user != null)
-            {
+            {          
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 var ticketPropierties = new Dictionary<string, string>();
                 var roleClaims = new List<Claim>();

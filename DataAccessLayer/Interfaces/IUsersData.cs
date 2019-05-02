@@ -14,5 +14,6 @@ namespace DataAccessLayer.Interfaces
         Task<int> Insert(Users user);
         Task<int> Update(Users user);
         Task<int> Delete(int EmployeeID);
+        void Dispose();
     }
 }

@@ -15,7 +15,6 @@ namespace DataAccessLayer.Repositories.Interfaces
         Task<int> Insert(Users user);
         Task<int> Update(Users user);
         Task<int> Delete(int id);
-        Task<int> Save();
         void Dispose();
     }
 }

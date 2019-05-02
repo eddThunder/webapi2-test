@@ -8,7 +8,6 @@ namespace WebAPIService.Controllers
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Net;
     using System.Security.Claims;
     using System.Threading.Tasks;
     using System.Web.Http;
@@ -42,7 +41,7 @@ namespace WebAPIService.Controllers
             catch (Exception ex)
             {
                 _logger.Error("error in UsersController -> GetAllUsersAsync: ", ex);
-                return BadRequest(ex.Message);
+                return BadRequest();
             }
         }
 
@@ -68,7 +67,7 @@ namespace WebAPIService.Controllers
             catch(Exception ex)
             {
                 _logger.Error("error in UsersController -> GetUserById: ", ex);
-                return BadRequest( ex.Message);
+                return BadRequest();
             }
         }
 
@@ -84,7 +83,7 @@ namespace WebAPIService.Controllers
             catch (Exception ex)
             {
                 _logger.Error("error in UsersController -> InsertUser: ", ex);
-                return BadRequest(ex.Message);
+                return BadRequest();
             }
         }
 
@@ -100,7 +99,7 @@ namespace WebAPIService.Controllers
             catch (Exception ex)
             {
                 _logger.Error("error in UsersController -> UpdateUserAsync: ", ex);
-                return BadRequest(ex.Message);
+                return BadRequest();
             }
         }
         [HttpGet]
@@ -115,7 +114,7 @@ namespace WebAPIService.Controllers
             catch(Exception ex)
             {
                 _logger.Error("error in UsersController -> DeleteUser: ", ex);
-                return BadRequest(ex.Message);
+                return BadRequest();
             }
         }
 

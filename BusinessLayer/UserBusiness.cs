@@ -37,7 +37,7 @@ namespace BusinessLayer
         {
             var entity = await _usersDataService.GetById(userId);
 
-            var resultDto = FactoryMapper.MapToDto(entity);
+            var resultDto = FactoryMapper.MapToDtoWithPassword(entity);
             
             return resultDto;
         }

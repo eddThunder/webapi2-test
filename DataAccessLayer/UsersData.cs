@@ -45,5 +45,10 @@ namespace DataAccessLayer
         {
             return await _userRepository.GetByCredentials(username, password);
         }
+
+        public void Dispose()
+        {
+            _userRepository.Dispose();
+        }
     }
 }

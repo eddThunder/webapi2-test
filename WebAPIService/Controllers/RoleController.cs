@@ -24,7 +24,8 @@ namespace WebAPIService.Controllers
         {
             try
             {
-                return Ok(await _roleBusinessService.GetAllRoles());
+                var result = await _roleBusinessService.GetAllRoles();
+                return Ok(result);
             }
             catch (Exception ex)
             {
