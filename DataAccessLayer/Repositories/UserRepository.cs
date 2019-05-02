@@ -98,6 +98,7 @@ namespace DataAccessLayer.Repositories
                         var userEntity = await ctx.Set<Users>().FindAsync(user.Id);
                         if (userEntity != null)
                         {
+                            ctx.Entry<Users>(userEntity).CurrentValues.SetValues(user);
                             userEntity.UsersRoles = new List<UsersRoles>();
                             userEntity.UsersRoles = user.UsersRoles;
                             ctx.Entry<Users>(userEntity).State = EntityState.Modified;
