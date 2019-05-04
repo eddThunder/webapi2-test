@@ -105,14 +105,14 @@ namespace WebAPIService.Controllers
             {
                 var result = await _userBusinessService.Update(user);
 
-                if(result != 0)
+                if (result != 0)
                 {
                     return Ok(result);
                 }
                 else
                 {
                     return Ok(HttpStatusCode.Conflict);
-                }     
+                }
             }
             catch (Exception ex)
             {
@@ -150,28 +150,36 @@ namespace WebAPIService.Controllers
         [Route("claims")]
         public async Task<UserViewModel> GetUserClaims()
         {
-            var identity = (ClaimsIdentity)User.Identity;
-
-            var allRoles = await _roleBusiness.GetAllRoles();
-            var rolesClaim = identity.FindAll(ClaimTypes.Role).ToList();
-
-            var roles = new List<RoleDto>();
-
-            rolesClaim.ForEach(claim => roles.Add(new RoleDto
+            try
             {
-                Id = allRoles.Where(x => x.RoleName == claim.Value).First().Id,
-                RoleName = claim.Value
-            }));
+                var identity = (ClaimsIdentity)User.Identity;
 
+                var allRoles = await _roleBusiness.GetAllRoles();
 
-            UserViewModel userInfo = new UserViewModel
+                var userRolesClaims = identity.FindAll(ClaimTypes.Role).ToList();
+
+                var roles = new List<RoleDto>();
+
+                userRolesClaims.ForEach(claim => roles.Add(new RoleDto
+                {
+                    Id = allRoles.Where(x => x.RoleName == claim.Value).First().Id,
+                    RoleName = claim.Value
+                }));
+
+                UserViewModel userInfo = new UserViewModel
+                {
+                    Id = int.Parse(identity.FindFirst("Id").Value),
+                    UserName = identity.FindFirst("UserName").Value,
+                    Roles = roles
+                };
+
+                return userInfo;
+            }
+            catch(Exception ex)
             {
-                Id = int.Parse(identity.FindFirst("Id").Value),
-                UserName = identity.FindFirst("UserName").Value,
-                Roles = roles
-            };
-
-            return userInfo;
+                _logger.Error("error in UsersController -> GetUserClaims: ", ex);
+                throw;
+            }
         } 
     }
 }
