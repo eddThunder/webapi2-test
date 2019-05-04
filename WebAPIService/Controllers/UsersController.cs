@@ -8,6 +8,7 @@ namespace WebAPIService.Controllers
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net;
     using System.Security.Claims;
     using System.Threading.Tasks;
     using System.Web.Http;
@@ -67,7 +68,7 @@ namespace WebAPIService.Controllers
             catch(Exception ex)
             {
                 _logger.Error("error in UsersController -> GetUserById: ", ex);
-                return BadRequest();
+                return NotFound();
             }
         }
 
@@ -78,12 +79,20 @@ namespace WebAPIService.Controllers
         {
             try
             {
-               return Ok(await _userBusinessService.Insert(user));
+                var result = await _userBusinessService.Insert(user);
+                if(result != 0)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return Ok(HttpStatusCode.Conflict);
+                }
             }
             catch (Exception ex)
             {
                 _logger.Error("error in UsersController -> InsertUser: ", ex);
-                return BadRequest();
+                return Conflict();
             }
         }
 
@@ -94,14 +103,24 @@ namespace WebAPIService.Controllers
         {
             try
             {
-                return Ok(await _userBusinessService.Update(user));
+                var result = await _userBusinessService.Update(user);
+
+                if(result != 0)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return Ok(HttpStatusCode.Conflict);
+                }     
             }
             catch (Exception ex)
             {
                 _logger.Error("error in UsersController -> UpdateUserAsync: ", ex);
-                return BadRequest();
+                return Conflict();
             }
         }
+
         [HttpGet]
         [Route("delete/{userId}")]
         [Authorize(Roles = "ADMIN")]
@@ -109,12 +128,21 @@ namespace WebAPIService.Controllers
         {
             try
             {
-                return Ok(await _userBusinessService.DeleteAsync(userId));
+                var result = await _userBusinessService.DeleteAsync(userId);
+
+                if(result != 0)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return Ok(HttpStatusCode.Conflict);
+                }
             }
             catch(Exception ex)
             {
                 _logger.Error("error in UsersController -> DeleteUser: ", ex);
-                return BadRequest();
+                return Conflict();
             }
         }
 
