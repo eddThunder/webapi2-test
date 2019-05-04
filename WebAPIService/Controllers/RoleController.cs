@@ -1,11 +1,13 @@
-﻿using BusinessLayer.Interfaces;
-using log4net;
-using System;
-using System.Threading.Tasks;
-using System.Web.Http;
+﻿
 
 namespace WebAPIService.Controllers
 {
+    using BusinessLayer.Interfaces;
+    using log4net;
+    using System;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+
     [Authorize]
     [RoutePrefix("api/roles")]
     public class RoleController : ApiController
