@@ -1,9 +1,7 @@
-﻿using BusinessLayer.Dto;
-using BusinessLayer.Interfaces;
-using BusinessLayer.Mapper;
+﻿using BusinessLayer.Interfaces;
+using DataAccessLayer.Dto;
 using DataAccessLayer.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BusinessLayer
@@ -21,9 +19,7 @@ namespace BusinessLayer
         {
             var roleList = await _roleDataService.GetAllRoles();
 
-            var dtoList = FactoryMapper.MapToDto(roleList.ToList());
-
-            return dtoList;
+            return roleList;
         }
     }
 }

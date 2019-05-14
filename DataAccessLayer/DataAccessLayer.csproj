@@ -102,16 +102,19 @@
     <Compile Include="DataModel\UsersRoles.cs">
       <DependentUpon>UsersManagementDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dto\RoleDto.cs" />
+    <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Helpers\Cryptography\CryptographyHelper.cs" />
     <Compile Include="Interfaces\IRoleData.cs" />
     <Compile Include="Interfaces\IUsersData.cs" />
+    <Compile Include="Mapper\FactoryMapper.cs" />
     <Compile Include="Repositories\Interfaces\IRoleRepository.cs" />
     <Compile Include="Repositories\Interfaces\IUserRepository.cs" />
     <Compile Include="Repositories\RolesRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleData.cs" />
     <Compile Include="UsersData.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

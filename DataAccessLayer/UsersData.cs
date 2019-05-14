@@ -1,11 +1,12 @@
 ﻿
 namespace DataAccessLayer
 {
-    using DataAccessLayer.DataModel;
+    using DataAccessLayer.Dto;
     using DataAccessLayer.Interfaces;
+    using DataAccessLayer.Mapper;
     using DataAccessLayer.Repositories.Interfaces;
-    using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     public class UsersData : IUsersData
@@ -16,23 +17,32 @@ namespace DataAccessLayer
             this._userRepository = userRepository;
         }
 
-        public async Task<IEnumerable<Users>> GetAllUsersAsync()
+        public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
         {
-            return await _userRepository.GetAllUsersAsync();
+
+            var userList = await _userRepository.GetAllUsersAsync();
+
+            return FactoryMapper.MapToDto(userList.ToList());
         }
 
-        public async Task<Users> GetById(int userId)
+        public async Task<UserDto> GetById(int userId)
         {
-            return await _userRepository.GetByIdAsync(userId);
+            var user = await _userRepository.GetByIdAsync(userId);
+
+            return FactoryMapper.MapToDto(user);
         }
 
-        public async Task<int> Insert(Users user)
+        public async Task<int> Insert(UserDto userDto)
         {
+            var user = FactoryMapper.MapToEntity(userDto);
+
             return await _userRepository.Insert(user);
         }
 
-        public async Task<int> Update(Users user)
+        public async Task<int> Update(UserDto userDto)
         {
+            var user = FactoryMapper.MapToEntity(userDto);
+
             return await _userRepository.Update(user);
         }
 
@@ -41,9 +51,11 @@ namespace DataAccessLayer
             return await _userRepository.Delete(userId);
         }
 
-        public async Task<Users> GetByCredentials(string username, string password)
+        public async Task<UserDto> GetByCredentials(string username, string password)
         {
-            return await _userRepository.GetByCredentials(username, password);
+            var user = await _userRepository.GetByCredentials(username, password);
+
+            return FactoryMapper.MapToDto(user);
         }
     }
 }

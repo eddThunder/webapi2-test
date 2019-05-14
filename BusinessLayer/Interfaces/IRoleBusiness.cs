@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Dto;
+﻿using DataAccessLayer.DataModel;
+using DataAccessLayer.Dto;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

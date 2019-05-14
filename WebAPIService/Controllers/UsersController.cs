@@ -2,8 +2,8 @@
 
 namespace WebAPIService.Controllers
 {
-    using BusinessLayer.Dto;
     using BusinessLayer.Interfaces;
+    using DataAccessLayer.Dto;
     using log4net;
     using System;
     using System.Collections.Generic;

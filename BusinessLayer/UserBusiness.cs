@@ -1,67 +1,57 @@
 ﻿
 namespace BusinessLayer
 {
-    using BusinessLayer.Dto;
     using BusinessLayer.Interfaces;
-    using BusinessLayer.Mapper;
+    using DataAccessLayer;
+    using DataAccessLayer.Dto;
     using DataAccessLayer.Interfaces;
+    using DataAccessLayer.Repositories.Interfaces;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
 
     public class UserBusiness : IUserBusiness
     {
-        private readonly IUsersData _usersDataService;
+        private readonly IUsersData _userService;
 
-        public UserBusiness(IUsersData usersDataService)
+        public UserBusiness(IUsersData usersRepository)
         {
-            this._usersDataService = usersDataService;
+            this._userService = usersRepository;
         }
 
         public async Task<int> DeleteAsync(int userId)
         {
-            return await _usersDataService.Delete(userId);
+            return await _userService.Delete(userId);
         }
 
         public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
         {
-            var entityList = await _usersDataService.GetAllUsersAsync();
-
-            var dtoList = FactoryMapper.MapToDto(entityList.ToList());
+            var dtoList = await _userService.GetAllUsersAsync();
 
             return dtoList;
         }
 
         public async Task<UserDto> GetByIdAsync(int userId)
         {
-            var entity = await _usersDataService.GetById(userId);
+            var dto = await _userService.GetById(userId);
 
-            var resultDto = FactoryMapper.MapToDtoWithPassword(entity);
-            
-            return resultDto;
+            return dto;
         }
 
         public async Task<UserDto> GetByCredentials(string username, string password)
         {
-            var entity = await _usersDataService.GetByCredentials(username, password);
+            var dto = await _userService.GetByCredentials(username, password);
 
-            var resultDto = FactoryMapper.MapToDto(entity);
-
-            return resultDto;
+            return dto;
         }
 
         public async Task<int> Insert(UserDto userDto)
         {
-            var entity = FactoryMapper.MapToEntity(userDto);
-
-            return await _usersDataService.Insert(entity);
+            return await _userService.Insert(userDto);
         }
 
         public async Task<int> Update(UserDto userDto)
         {
-           var entity = FactoryMapper.MapToEntity(userDto);
-
-           return await _usersDataService.Update(entity);
+           return await _userService.Update(userDto);
         }
     }
 }

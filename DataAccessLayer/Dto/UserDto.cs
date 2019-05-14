@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BusinessLayer.Dto
+namespace DataAccessLayer.Dto
 {
     public class UserDto
     {

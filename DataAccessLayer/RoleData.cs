@@ -1,5 +1,7 @@
 ﻿using DataAccessLayer.DataModel;
+using DataAccessLayer.Dto;
 using DataAccessLayer.Interfaces;
+using DataAccessLayer.Mapper;
 using DataAccessLayer.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,9 +19,11 @@ namespace DataAccessLayer
             this._roleRepository = roleRepository;
         }
 
-        public async Task<IEnumerable<Roles>> GetAllRoles()
+        public async Task<IEnumerable<RoleDto>> GetAllRoles()
         {
-            return await this._roleRepository.GetAllRoles();
+            var roles = await this._roleRepository.GetAllRoles();
+
+            return FactoryMapper.MapToDto(roles.ToList());
         }
     }
 }

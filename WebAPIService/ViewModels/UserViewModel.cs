@@ -1,4 +1,4 @@
-﻿using BusinessLayer.Dto;
+﻿using DataAccessLayer.Dto;
 using System.Collections.Generic;
 
 namespace WebAPIService.ViewModels

@@ -9,7 +9,7 @@ namespace DataAccessLayer.Repositories
     using System.Data.Entity;
     using System.Linq;
     using System.Threading.Tasks;
-    
+
     public class UserRepository : IUserRepository
     {
         private readonly UsersManagementEntities _context;
@@ -35,6 +35,7 @@ namespace DataAccessLayer.Repositories
                             item.UsersRoles = new List<UsersRoles>(userRoles);
                         }
                     }
+
                     return users;
                 }
             }
@@ -91,6 +92,7 @@ namespace DataAccessLayer.Repositories
             try
             {
                 var resultDeleteRoles = await DeleteUserRoles(user.Id);
+
                 if (resultDeleteRoles != 0)
                 {
                     using (UsersManagementEntities ctx = new UsersManagementEntities())

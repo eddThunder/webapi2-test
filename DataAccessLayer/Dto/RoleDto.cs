@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessLayer.Dto
+namespace DataAccessLayer.Dto
 {
     public class RoleDto
     {

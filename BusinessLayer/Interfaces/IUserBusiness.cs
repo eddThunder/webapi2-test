@@ -2,7 +2,7 @@
 
 namespace BusinessLayer.Interfaces
 {
-    using BusinessLayer.Dto;
+    using DataAccessLayer.Dto;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
