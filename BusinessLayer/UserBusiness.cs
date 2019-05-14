@@ -2,10 +2,8 @@
 namespace BusinessLayer
 {
     using BusinessLayer.Interfaces;
-    using DataAccessLayer;
     using DataAccessLayer.Dto;
     using DataAccessLayer.Interfaces;
-    using DataAccessLayer.Repositories.Interfaces;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 

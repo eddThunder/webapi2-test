@@ -29,7 +29,7 @@ namespace DataAccessLayer
         {
             var user = await _userRepository.GetByIdAsync(userId);
 
-            return FactoryMapper.MapToDto(user);
+            return FactoryMapper.MapToDtoWithPassword(user);
         }
 
         public async Task<int> Insert(UserDto userDto)
