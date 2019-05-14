@@ -121,7 +121,7 @@ namespace WebAPIService.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpDelete]
         [Route("delete/{userId}")]
         [Authorize(Roles = "ADMIN")]
         public async Task<IHttpActionResult> DeleteUser(int userId)
