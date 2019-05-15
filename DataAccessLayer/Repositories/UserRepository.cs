@@ -12,12 +12,8 @@ namespace DataAccessLayer.Repositories
 
     public class UserRepository : IUserRepository
     {
-        private readonly UsersManagementEntities _context;
 
-        public UserRepository(UsersManagementEntities context)
-        {
-            _context = context;
-        }
+        public UserRepository() { }
 
 
         public async Task<IEnumerable<Users>> GetAllUsersAsync()
@@ -26,7 +22,7 @@ namespace DataAccessLayer.Repositories
             {
                 using (UsersManagementEntities ctx = new UsersManagementEntities())
                 {
-                    var users= await ctx.Users.Include(x => x.UsersRoles).ToListAsync();
+                    var users = await ctx.Users.Include(x => x.UsersRoles).ToListAsync();
                     foreach (var item in users)
                     {
                         if (item.UsersRoles.Any())
@@ -35,9 +31,8 @@ namespace DataAccessLayer.Repositories
                             item.UsersRoles = new List<UsersRoles>(userRoles);
                         }
                     }
-
                     return users;
-                }
+                }   
             }
             catch (Exception ex)
             {

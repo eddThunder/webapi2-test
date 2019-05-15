@@ -2,8 +2,7 @@
 
 namespace WebAPIService.Auth
 {
-    using DataAccessLayer.DataModel;
-    using DataAccessLayer.Repositories;
+    using DataAccessLayer.Repositories.Interfaces;
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.OAuth;
     using System.Collections.Generic;
@@ -13,12 +12,13 @@ namespace WebAPIService.Auth
 
     public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
-        private readonly UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public AuthorizationServerProvider()
+        public AuthorizationServerProvider(IUserRepository userRespository)
         {
-            _userRepository = new UserRepository(new UsersManagementEntities());
+            _userRepository = userRespository;
         }
+
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             context.Validated();

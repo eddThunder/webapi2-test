@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin;
+﻿using DataAccessLayer.Repositories;
+using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Ninject.Web.Common.OwinHost;
@@ -39,7 +40,7 @@ namespace WebAPIService
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/api/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(20),
-                Provider = new AuthorizationServerProvider()
+                Provider = new AuthorizationServerProvider(new UserRepository())
             };
 
             // Token Generation

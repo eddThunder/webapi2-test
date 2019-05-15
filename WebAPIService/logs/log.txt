@@ -700,3 +700,75 @@ System.InvalidOperationException: An entity object cannot be referenced by multi
    en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
    en WebAPIService.Controllers.UsersController.<DeleteUser>d__8.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 112
+ERROR 2019-05-15 09:37:04,004 52903ms UsersController        MoveNext           - error in UsersController -> GetAllUsersAsync: 
+System.InvalidOperationException: The operation cannot be completed because the DbContext has been disposed.
+   en DataAccessLayer.Repositories.UserRepository.<GetAllUsersAsync>d__2.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 45
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<GetAllUsersAsync>d__2.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 21
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<GetAllUsersAsync>d__3.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetAllUsers>d__4.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 40
+ERROR 2019-05-15 09:37:13,942 62840ms UsersController        MoveNext           - error in UsersController -> GetAllUsersAsync: 
+System.InvalidOperationException: The operation cannot be completed because the DbContext has been disposed.
+   en DataAccessLayer.Repositories.UserRepository.<GetAllUsersAsync>d__2.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 45
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<GetAllUsersAsync>d__2.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 21
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<GetAllUsersAsync>d__3.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetAllUsers>d__4.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 40
+ERROR 2019-05-15 09:37:19,712 68610ms UsersController        MoveNext           - error in UsersController -> GetAllUsersAsync: 
+System.InvalidOperationException: The operation cannot be completed because the DbContext has been disposed.
+   en DataAccessLayer.Repositories.UserRepository.<GetAllUsersAsync>d__2.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 45
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<GetAllUsersAsync>d__2.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 21
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<GetAllUsersAsync>d__3.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetAllUsers>d__4.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 40
+ERROR 2019-05-15 09:37:23,971 72869ms UsersController        MoveNext           - error in UsersController -> GetAllUsersAsync: 
+System.InvalidOperationException: The operation cannot be completed because the DbContext has been disposed.
+   en DataAccessLayer.Repositories.UserRepository.<GetAllUsersAsync>d__2.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\Repositories\UserRepository.cs:línea 45
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en DataAccessLayer.UsersData.<GetAllUsersAsync>d__2.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\DataAccessLayer\UsersData.cs:línea 21
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en BusinessLayer.UserBusiness.<GetAllUsersAsync>d__3.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en WebAPIService.Controllers.UsersController.<GetAllUsers>d__4.MoveNext() en C:\Users\emoret\source\repos\WebAPIService\WebAPIService\Controllers\UsersController.cs:línea 40

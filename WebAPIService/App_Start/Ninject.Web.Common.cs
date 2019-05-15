@@ -86,9 +86,9 @@ namespace WebAPIService.App_Start
 
 
             //Role dependencies
-            kernel.Bind<IRoleRepository>().To<RolesRepository>().InRequestScope();
-            kernel.Bind<IRoleBusiness>().To<RoleBusiness>().InRequestScope();
-            kernel.Bind<IRoleData>().To<RoleData>().InRequestScope();
+            kernel.Bind<IRoleRepository>().To<RolesRepository>().InSingletonScope();
+            kernel.Bind<IRoleBusiness>().To<RoleBusiness>().InSingletonScope();
+            kernel.Bind<IRoleData>().To<RoleData>().InSingletonScope();
            
         }        
 
