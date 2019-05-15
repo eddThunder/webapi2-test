@@ -30,7 +30,7 @@ namespace UsersWebAPI.Test
             mockedRepo.Verify(m => m.GetAllRoles(), Times.Once);
         }
 
-        private List<Roles> MockedRoleList()
+        private IEnumerable<Roles> MockedRoleList()
         {
             var builder = new RoleBuilder();
 

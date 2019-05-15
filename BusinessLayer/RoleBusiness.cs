@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interfaces;
+using DataAccessLayer.DataModel;
 using DataAccessLayer.Dto;
 using DataAccessLayer.Interfaces;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace BusinessLayer
             _roleDataService = roleDataService;
         }
 
-        public async Task<IEnumerable<RoleDto>> GetAllRoles()
+        public async Task<IEnumerable<Roles>> GetAllRoles()
         {
             var roleList = await _roleDataService.GetAllRoles();
 

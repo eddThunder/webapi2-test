@@ -4,7 +4,9 @@ namespace BusinessLayer
     using BusinessLayer.Interfaces;
     using DataAccessLayer.Dto;
     using DataAccessLayer.Interfaces;
+    using DataAccessLayer.Mapper;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     public class UserBusiness : IUserBusiness
@@ -25,31 +27,35 @@ namespace BusinessLayer
         {
             var dtoList = await _userService.GetAllUsersAsync();
 
-            return dtoList;
+            return FactoryMapper.MapToDto(dtoList.ToList());
         }
 
         public async Task<UserDto> GetByIdAsync(int userId)
         {
             var dto = await _userService.GetById(userId);
 
-            return dto;
+            return FactoryMapper.MapToDtoWithPassword(dto);
         }
 
         public async Task<UserDto> GetByCredentials(string username, string password)
         {
             var dto = await _userService.GetByCredentials(username, password);
 
-            return dto;
+            return FactoryMapper.MapToDto(dto);
         }
 
         public async Task<int> Insert(UserDto userDto)
         {
-            return await _userService.Insert(userDto);
+            var entity = FactoryMapper.MapToEntity(userDto);
+
+            return await _userService.Insert(entity);
         }
 
         public async Task<int> Update(UserDto userDto)
         {
-           return await _userService.Update(userDto);
+            var entity = FactoryMapper.MapToEntity(userDto);
+
+            return await _userService.Update(entity);
         }
     }
 }
