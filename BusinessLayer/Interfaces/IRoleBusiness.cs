@@ -7,6 +7,6 @@ namespace BusinessLayer.Interfaces
 {
     public interface IRoleBusiness
     {
-        Task<IEnumerable<Roles>> GetAllRoles();
+        Task<IEnumerable<RoleDto>> GetAllRoles();
     }
 }

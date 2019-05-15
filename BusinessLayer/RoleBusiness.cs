@@ -2,7 +2,9 @@
 using DataAccessLayer.DataModel;
 using DataAccessLayer.Dto;
 using DataAccessLayer.Interfaces;
+using DataAccessLayer.Mapper;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BusinessLayer
@@ -16,11 +18,11 @@ namespace BusinessLayer
             _roleDataService = roleDataService;
         }
 
-        public async Task<IEnumerable<Roles>> GetAllRoles()
+        public async Task<IEnumerable<RoleDto>> GetAllRoles()
         {
             var roleList = await _roleDataService.GetAllRoles();
 
-            return roleList;
+            return FactoryMapper.MapToDto(roleList.ToList());
         }
     }
 }
