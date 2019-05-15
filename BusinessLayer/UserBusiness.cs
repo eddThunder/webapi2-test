@@ -25,23 +25,23 @@ namespace BusinessLayer
 
         public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
         {
-            var dtoList = await _userService.GetAllUsersAsync();
+            var entityList = await _userService.GetAllUsersAsync();
 
-            return FactoryMapper.MapToDto(dtoList.ToList());
+            return FactoryMapper.MapToDto(entityList.ToList());
         }
 
         public async Task<UserDto> GetByIdAsync(int userId)
         {
-            var dto = await _userService.GetById(userId);
+            var entity = await _userService.GetById(userId);
 
-            return FactoryMapper.MapToDtoWithPassword(dto);
+            return FactoryMapper.MapToDtoWithPassword(entity);
         }
 
         public async Task<UserDto> GetByCredentials(string username, string password)
         {
-            var dto = await _userService.GetByCredentials(username, password);
+            var entity = await _userService.GetByCredentials(username, password);
 
-            return FactoryMapper.MapToDto(dto);
+            return FactoryMapper.MapToDto(entity);
         }
 
         public async Task<int> Insert(UserDto userDto)
