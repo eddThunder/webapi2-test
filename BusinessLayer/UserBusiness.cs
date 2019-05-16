@@ -13,9 +13,9 @@ namespace BusinessLayer
     {
         private readonly IUsersData _userService;
 
-        public UserBusiness(IUsersData usersRepository)
+        public UserBusiness(IUsersData userService)
         {
-            this._userService = usersRepository;
+            this._userService = userService;
         }
 
         public async Task<int> DeleteAsync(int userId)
