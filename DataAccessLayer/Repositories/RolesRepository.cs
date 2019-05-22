@@ -8,12 +8,8 @@ namespace DataAccessLayer.Repositories
 {
     public class RolesRepository : IRoleRepository
     {
-        private readonly UsersManagementEntities _context;
+        public RolesRepository(){}
 
-        public RolesRepository(UsersManagementEntities context)
-        {
-            _context = context;
-        }
         public async Task<IEnumerable<Roles>> GetAllRoles()
         {
             using (var ctx = new UsersManagementEntities())
